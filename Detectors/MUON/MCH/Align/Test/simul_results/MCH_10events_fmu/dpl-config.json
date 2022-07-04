@@ -1,0 +1,51 @@
+{
+    "internal-dpl-clock": "",
+    "mch-sim-digit-reader": {
+        "mch-digit-infile": "mchdigits.root",
+        "tf-info-file": "",
+        "orbit-offset-enumeration": "0",
+        "orbit-multiplier-enumeration": "0",
+        "start-value-enumeration": "0",
+        "end-value-enumeration": "-1",
+        "step-value-enumeration": "1"
+    },
+    "mch-digit-filtering": {
+        "sanity-check": "false",
+        "min-adc-value": "1"
+    },
+    "mch-precluster-finder": {
+        "check-no-leftover-digits": "error",
+        "sanity-check": "false",
+        "discard-high-occupancy-des": "false",
+        "discard-high-occupancy-events": "false"
+    },
+    "mch-cluster-finder": {
+        "mch-config": "",
+        "run2-config": "false",
+        "attach-initial-precluster": "false"
+    },
+    "mch-cluster-transformer": {
+        "geometry": "o2sim_geometry.root"
+    },
+    "mch-track-finder": {
+        "l3Current": "-30000",
+        "dipoleCurrent": "-6000",
+        "grp-file": "o2sim_grp.root",
+        "mch-config": "",
+        "mch-debug": "0"
+    },
+    "mch-track-mc-label-finder": {
+        "incontext": "collisioncontext.root",
+        "sigma-cut": "4"
+    },
+    "internal-dpl-injected-dummy-sink": "",
+    "mch-track-writer": {
+        "outfile": "mchtracks.root",
+        "output-dir": "none",
+        "treename": "o2sim",
+        "treetitle": "Tree MCH Standalone Tracks",
+        "nevents": "-1",
+        "autosave": "-1",
+        "terminate": "process"
+    }
+}

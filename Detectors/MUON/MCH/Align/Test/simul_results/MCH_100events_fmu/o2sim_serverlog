@@ -1,0 +1,1482 @@
+o2-sim-primary-server-device-runner
+--control
+static
+--id
+primary-server
+--mq-config
+o2simtopology_57565.json
+--severity
+debug
+-m
+MCH
+-n
+100
+-g
+fwmugen
+$$$$
+[[01;36m13:42:18[0m][[01;32mINFO[0m] 
+      ______      _    _______  _________ 
+     / ____/___ _(_)_______   |/  /_  __ \    version 1.4.50
+    / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+   / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+  /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2022 GSI
+
+[[01;36m13:42:18[0m][[01;35mSTATE[0m] Starting FairMQ state machine --> IDLE
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] PID: 57566
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Loaded plugin: 'config', version '1.4.50', maintainer 'FairRootGroup <fairroot@gsi.de>', homepage 'https://github.com/FairRootGroup/FairMQ'
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Loaded plugin: 'control', version '1.4.50', maintainer 'FairRootGroup <fairroot@gsi.de>', homepage 'https://github.com/FairRootGroup/FairMQ'
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Running builtin controller: static
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Plugin 'control' is setting up signal handling for SIGINT and SIGTERM
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Configuration: 
+CCDBUrl                       = http://alice-ccdb.cern.ch <string>         [default] 
+asservice                     = false                     <bool>           [default] 
+bMax                          = 0                         <float>          [default] 
+bad-alloc-attempt-interval    = 50                        <int>            [default] 
+catch-signals                 = 1                         <int>            [default] 
+chunkSize                     = 500                       <unsigned>       [default] 
+chunkSizeI                    = -1                        <int>            [default] 
+color                         = true                      <bool>           [default] 
+configFile                    =                           <string>         [default] 
+configKeyValues               =                           <string>         [default] 
+control                       = static                    <string>         [provided]
+embedIntoFile                 =                           <string>         [default] 
+extKinFile                    = Kinematics.root           <string>         [default] 
+field                         = -5                        <string>         [default] 
+file-severity                 = debug                     <string>         [default] 
+generator                     = fwmugen                   <string>         [provided]
+id                            = primary-server            <string>         [provided]
+init-timeout                  = 120                       <int>            [default] 
+io-threads                    = 1                         <int>            [default] 
+isMT                          = false                     <bool>           [default] 
+log-to-file                   =                           <string>         [default] 
+logseverity                   = INFO                      <string>         [default] 
+logverbosity                  = medium                    <string>         [default] 
+mcEngine                      = TGeant3                   <string>         [default] 
+modules                       = MCH                       <vector<string>> [provided]
+mq-config                     = o2simtopology_57565.json  <string>         [provided]
+nEvents                       = 100                       <unsigned>       [provided]
+network-interface             = default                   <string>         [default] 
+noGeant                       = false                     <bool>           [default] 
+nworkers                      = 2                         <int>            [default] 
+ofi-size-hint                 = 0                         <unsigned long>  [default] 
+outPrefix                     = o2sim                     <string>         [default] 
+rate                          = 0                         <float>          [default] 
+readoutDetectors              =                           <vector<string>> [default] 
+seed                          = -1                        <int>            [default] 
+session                       = default                   <string>         [default] 
+severity                      = debug                     <string>         [provided]
+shm-allocation                = rbtree_best_fit           <string>         [default] 
+shm-mlock-segment             = false                     <bool>           [default] 
+shm-mlock-segment-on-creation = false                     <bool>           [default] 
+shm-monitor                   = true                      <bool>           [default] 
+shm-no-cleanup                = false                     <bool>           [default] 
+shm-segment-id                = 0                         <unsigned short> [default] 
+shm-segment-size              = 2147483648                <unsigned long>  [default] 
+shm-throw-bad-alloc           = true                      <bool>           [default] 
+shm-zero-segment              = false                     <bool>           [default] 
+shm-zero-segment-on-creation  = false                     <bool>           [default] 
+skipModules                   =                           <vector<string>> [default] 
+skipReadoutDetectors          =                           <vector<string>> [default] 
+startEvent                    = 0                         <unsigned>       [default] 
+transport                     = zeromq                    <string>         [default] 
+trigger                       =                           <string>         [default] 
+verbosity                     = medium                    <string>         [default] 
+
+[[01;36m13:42:18[0m][[01;35mSTATE[0m] IDLE ---> INITIALIZING DEVICE
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] mq-config: Using default JSON parser
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Parsing JSON from o2simtopology_57565.json ...
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Setting 'zeromq' as default transport for the device
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Adding 'zeromq' transport
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Transport: Using ZeroMQ library, version: 4.3.3
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Initializing transport for channel o2sim-primserv-info[0]: default
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Reusing existing 'zeromq' transport
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Initializing transport for channel primary-get[0]: default
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Reusing existing 'zeromq' transport
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Initializing transport for channel primary-notifications[0]: default
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Reusing existing 'zeromq' transport
+[[01;36m13:42:18[0m][[01;35mSTATE[0m] INITIALIZING DEVICE ---> INITIALIZED
+[[01;36m13:42:18[0m][[01;35mSTATE[0m] INITIALIZED ---> BINDING
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Validating channel 'o2sim-primserv-info[0]'... VALID
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Created socket primary-server.o2sim-primserv-info[0].rep
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Attached channel o2sim-primserv-info[0] to ipc:///tmp/o2sim-primserv-info-57565 (bind) (rep)
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Validating channel 'primary-get[0]'... VALID
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Created socket primary-server.primary-get[0].rep
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Attached channel primary-get[0] to ipc:///tmp/o2sim-primary-get-57565 (bind) (rep)
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Validating channel 'primary-notifications[0]'... VALID
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Created socket primary-server.primary-notifications[0].pub
+[[01;36m13:42:18[0m][[01;34mDEBUG[0m] Attached channel primary-notifications[0] to ipc:///tmp/o2sim-primary-notifications-57565 (bind) (pub)
+[[01;36m13:42:18[0m][[01;35mSTATE[0m] BINDING ---> BOUND
+[[01;36m13:42:18[0m][[01;35mSTATE[0m] BOUND ---> CONNECTING
+[[01;36m13:42:18[0m][[01;35mSTATE[0m] CONNECTING ---> DEVICE READY
+[[01;36m13:42:18[0m][[01;35mSTATE[0m] DEVICE READY ---> INITIALIZING TASK
+[[01;36m13:42:18[0m][[01;32mINFO[0m] INITTASK CHANGING STATE TO INIT
+[[01;36m13:42:18[0m][[01;32mINFO[0m] Init Server device 
+[[01;36m13:42:19[0m][[01;32mINFO[0m] Stack.storeSecondaries : true		[ CODE ]
+Stack.pruneKine : true		[ CODE ]
+Stack.transportPrimary : all		[ CODE ]
+Stack.transportPrimaryFileName : 		[ CODE ]
+Stack.transportPrimaryFuncName : 		[ CODE ]
+Stack.transportPrimaryInvert : false		[ CODE ]
+
+[[01;36m13:42:19[0m][[01;32mINFO[0m] ENGINE SET TO TGeant3
+[[01;36m13:42:19[0m][[01;32mINFO[0m] CHUNK SIZE SET TO 500
+[[01;36m13:42:19[0m][[01;32mINFO[0m] RNG INITIAL SEED 1374125001
+[[01;36m13:42:21[0m][[01;32mINFO[0m] LAUNCHING STATUS THREAD
+[[01;36m13:42:21[0m][[01;32mINFO[0m] INFO REQUEST RECEIVED
+[[01;36m13:42:21[0m][[01;32mINFO[0m] Received config request
+[[01;36m13:42:21[0m][[01;32mINFO[0m] config reply send 
+[[01;36m13:42:21[0m][[01;34mDEBUG[0m] On macOS we simply rely on TGrid::Connect("alien").
+[[01;36m13:42:21[0m][[01;32mINFO[0m] Init CcdApi with UserAgentID: dphnmct7-1653651741-qmWqBl, Host: http://alice-ccdb.cern.ch/, alien-token: true
+[[01;36m13:42:21[0m][[01;34mDEBUG[0m] On macOS we simply rely on TGrid::Connect("alien").
+[[01;36m13:42:21[0m][[01;32mINFO[0m] Init CcdApi with UserAgentID: dphnmct7-1653651741-qmWqBl, Host: http://alice-ccdb.cern.ch, alien-token: true
+[[01;36m13:42:21[0m][[01;32mINFO[0m] MagneticField::CreateField: Maximim possible beam energy for requested beam is assumed
+[[01;36m13:42:21[0m][[01;32mINFO[0m] INFO REQUEST RECEIVED
+[[01;36m13:42:21[0m][[01;32mINFO[0m] Received config request
+[[01;36m13:42:21[0m][[01;32mINFO[0m] config reply send 
+[[01;36m13:42:21[0m][[01;32mINFO[0m] MagneticField::Print: Maps:
+[[01;36m13:42:21[0m][[01;32mINFO[0m] MagneticField::Print: Solenoid (-1*)5 kG, Dipole ON (-1) 
+[[01;36m13:42:21[0m][[01;32mINFO[0m] MagneticField::Print: Machine B fields for p-p  beam (7000 GeV): QGrad: 22.0002 Dipole: 37.8781
+[[01;36m13:42:21[0m][[01;32mINFO[0m] MagneticField::Print: Uses Sol30_Dip6_Hole  of $(O2_ROOT)/share/Common/maps/mfchebKGI_sym.root
+Info in <TGeoGlobalMagField::SetField>: Global magnetic field set to <Maps>
+Info in <TGeoGlobalMagField::Lock>: Global magnetic field <Maps> is now locked
+[[01;36m13:42:21[0m][[01;32mINFO[0m] Init box forward muons generator
+[[01;36m13:42:21[0m][[01;32mINFO[0m] Initialising primary generator
+[[01;36m13:42:21[0m][[01;32mINFO[0m] Setting interaction diamond: position = {0,0,0} cm
+[[01;36m13:42:21[0m][[01;32mINFO[0m] Setting interaction diamond: width = {0,0,0} cm
+[[01;36m13:42:21[0m][[01;32mINFO[0m] FairBoxGenerator: particle with PDG =13 Found
+[[01;36m13:42:21[0m][[01;32mINFO[0m] Generator initialization took 0.23s
+[[01;36m13:42:21[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:21[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:21[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(1.15, -1.49, -49.96) GeV,
+[[01;36m13:42:21[0m][[01;34mDEBUG[0m] (Event 1) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:21[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:21[0m][[01;32mINFO[0m] ASSIGNED PIPE HANDLE 17
+[[01;36m13:42:21[0m][[01;32mINFO[0m] INITTASK CHANGING STATE TO SERVING
+[[01;36m13:42:21[0m][[01;35mSTATE[0m] INITIALIZING TASK ---> READY
+[[01;36m13:42:21[0m][[01;35mSTATE[0m] READY ---> RUNNING
+[[01;36m13:42:21[0m][[01;32mINFO[0m] fair::mq::Device running...
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:0
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 0 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 1 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(2.45, -0.67, -49.94) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 2) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0.01 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:0
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 1 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 2 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-2.31, -1.15, -49.93) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 3) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 2 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 3 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-2.82, 0.97, -49.91) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 4) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:2
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 3 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 4 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(5.09, -2.81, -49.66) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 5) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:3
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 4 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 5 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(5.31, -4.72, -49.49) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 6) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 5 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 6 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(4.87, -5.24, -49.49) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 7) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:4
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 6 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 7 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(1.28, -3.54, -49.86) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 8) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:2
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 7 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 8 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-1.31, -5.82, -49.64) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 9) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:5
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 8 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 9 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(6.82, -4.13, -49.36) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 10) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:3
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 9 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 10 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-5.96, -2.14, -49.60) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 11) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:6
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 10 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 11 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-2.03, -0.04, -49.96) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 12) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:4
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 11 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 12 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-2.19, -3.00, -49.86) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 13) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:7
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 12 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 13 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(2.25, 2.07, -49.91) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 14) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:5
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 13 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 14 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(3.31, 2.03, -49.85) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 15) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:8
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 14 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 15 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-2.13, 2.64, -49.88) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 16) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:9
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 15 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 16 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-0.64, 5.32, -49.71) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 17) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:6
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 16 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 17 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-3.56, 5.04, -49.62) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 18) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:10
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 17 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 18 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-0.40, -2.37, -49.94) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 19) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:11
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 18 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 19 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-1.69, 1.06, -49.96) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 20) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:7
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 19 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 20 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(7.67, -2.10, -49.36) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 21) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:12
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 20 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 21 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-3.90, -2.49, -49.79) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 22) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0.01 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:8
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 21 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 22 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-4.83, -4.11, -49.60) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 23) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:13
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 22 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 23 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(3.09, -2.87, -49.82) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 24) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:14
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 23 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 24 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(0.10, 6.24, -49.61) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 25) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:9
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 24 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 25 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-1.34, 1.74, -49.95) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 26) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:15
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 25 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 26 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(0.86, 2.84, -49.91) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 27) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:10
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 26 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 27 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(0.97, -2.20, -49.94) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 28) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:16
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 27 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 28 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-1.80, -6.22, -49.58) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 29) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:17
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 28 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 29 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-3.91, -0.89, -49.84) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 30) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:11
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 29 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 30 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-2.96, -2.62, -49.84) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 31) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:18
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 30 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 31 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(2.00, -0.20, -49.96) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 32) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:12
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 31 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 32 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-7.01, -3.19, -49.40) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 33) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:19
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 32 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 33 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(1.18, -2.45, -49.93) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 34) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:13
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 33 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 34 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-1.84, -0.60, -49.96) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 35) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:20
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 34 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 35 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(2.46, 5.75, -49.61) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 36) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:21
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 35 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 36 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-2.00, -6.23, -49.57) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 37) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0.01 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:14
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 36 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 37 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-1.00, -1.90, -49.95) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 38) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:22
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 37 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 38 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-2.34, -1.70, -49.92) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 39) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:23
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 38 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 39 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(2.84, -4.18, -49.74) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 40) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:15
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 39 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 40 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(0.96, 1.83, -49.96) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 41) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:24
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 40 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 41 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(0.58, 4.11, -49.83) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 42) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:16
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 41 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 42 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-4.64, -6.37, -49.38) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 43) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:25
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 42 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 43 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(5.13, 1.04, -49.73) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 44) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:17
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 43 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 44 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(1.74, -2.39, -49.91) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:26
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 45) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 44 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0.01s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 45 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(3.69, -1.10, -49.85) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 46) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:27
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 45 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 46 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-3.05, 0.18, -49.91) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 47) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:18
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 46 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 47 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(3.59, 1.66, -49.84) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 48) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:28
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 47 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 48 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(1.89, -5.99, -49.60) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 49) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0.01 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:19
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 48 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 49 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-0.65, 3.77, -49.85) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 50) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:29
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 49 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 50 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(0.71, -2.43, -49.94) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 51) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:30
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 50 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 51 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-5.61, 1.80, -49.65) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 52) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:31
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 51 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 52 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(0.91, -1.72, -49.96) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 53) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:32
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 52 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 53 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-1.51, 1.35, -49.96) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 54) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:20
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 53 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 54 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-1.34, -4.39, -49.79) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 55) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:33
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 54 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 55 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-3.46, 3.07, -49.79) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 56) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:21
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 55 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 56 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(3.15, -3.20, -49.80) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 57) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:34
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 56 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 57 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(3.06, 0.69, -49.90) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 58) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:22
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 57 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 58 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(0.83, 5.73, -49.66) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 59) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:35
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 58 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 59 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(4.86, 1.69, -49.73) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 60) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:23
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 59 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 60 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(3.15, -1.21, -49.89) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 61) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:24
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 60 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 61 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-1.38, -2.22, -49.93) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 62) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:25
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 61 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 62 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(2.38, 2.61, -49.87) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 63) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:36
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 62 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 63 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-1.65, 1.36, -49.95) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 64) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:37
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 63 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 64 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(1.66, 3.84, -49.82) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 65) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:26
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 64 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 65 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0.02 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(1.51, 2.17, -49.93) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 66) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0.01s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:38
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 65 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 66 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(2.45, -2.50, -49.88) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 67) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:39
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 66 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 67 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-5.45, 3.27, -49.59) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 68) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:27
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 67 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 68 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-1.35, -2.67, -49.91) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 69) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:40
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 68 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 69 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(2.27, -1.01, -49.94) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 70) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:28
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 69 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 70 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-1.72, -7.58, -49.39) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 71) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:41
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 70 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 71 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(5.63, 2.12, -49.64) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 72) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:42
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 71 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 72 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-1.60, -1.94, -49.94) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 73) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:29
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 72 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 73 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-1.94, 3.54, -49.84) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 74) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:43
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 73 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 74 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-4.06, -2.08, -49.79) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 75) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:44
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 74 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 75 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(4.23, 0.67, -49.82) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 76) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:30
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 75 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 76 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-0.02, 4.03, -49.84) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 77) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:45
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 76 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 77 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-3.70, -2.57, -49.80) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 78) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:31
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 77 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 78 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(0.59, -3.01, -49.91) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 79) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:46
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 78 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 79 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-6.90, -3.59, -49.39) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 80) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:32
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 79 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 80 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(1.29, 1.73, -49.95) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 81) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:47
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 80 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 81 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(2.49, 3.06, -49.84) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 82) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:33
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 81 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 82 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-5.07, 1.75, -49.71) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 83) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:48
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 82 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 83 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-1.88, 0.05, -49.96) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 84) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:34
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 83 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 84 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-1.22, -2.68, -49.91) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 85) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:49
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 84 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 85 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-6.86, -3.75, -49.39) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 86) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:35
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 85 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 86 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(1.99, -7.07, -49.46) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 87) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:50
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 86 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 87 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(4.39, -2.01, -49.77) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0.01 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 88) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:51
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 87 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 88 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:36
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 88 100 1 available 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(1.79, 3.00, -49.88) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 89) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 89 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-4.30, -3.63, -49.68) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 90) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:52
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 89 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 90 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(3.40, 2.56, -49.82) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 91) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:37
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 90 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 91 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-0.26, 1.99, -49.96) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 92) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:53
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 91 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 92 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-3.79, 6.56, -49.42) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 93) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:54
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 92 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 93 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(2.23, -0.02, -49.95) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 94) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:55
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 93 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 94 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(5.78, 2.36, -49.61) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 95) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:38
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 94 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 95 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-3.32, -3.51, -49.77) GeV,
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 96) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:56
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 95 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 96 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-0.19, 5.09, -49.74) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 97) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:39
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 96 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 97 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-2.28, 2.65, -49.88) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 98) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:57
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 97 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 98 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(6.74, 1.56, -49.52) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 99) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:40
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 98 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 99 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(7.06, -2.09, -49.46) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 100) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:58
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 99 100 1 available 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m13:42:43[0m][[01;32mINFO[0m] treating ev 100 part 1 out of 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(2.08, -2.34, -49.90) GeV,
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] (Event 101) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m13:42:43[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:59
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Received request for work 100 100 1 available 0
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] CONDRUN CHANGING STATE TO STOPPED
+[[01;36m13:42:43[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m13:42:43[0m][[01;32mINFO[0m] Waiting info thread
+[[01;36m13:42:43[0m][[01;35mSTATE[0m] RUNNING ---> READY
+[[01;36m13:42:43[0m][[01;35mSTATE[0m] READY ---> RESETTING TASK
+[[01;36m13:42:43[0m][[01;35mSTATE[0m] RESETTING TASK ---> DEVICE READY
+[[01;36m13:42:43[0m][[01;35mSTATE[0m] No transition from state DEVICE_READY on transition AUTO
+[[01;36m13:42:43[0m][[01;35mSTATE[0m] DEVICE READY ---> RESETTING DEVICE
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] Destroying ZeroMQ transport...
+[[01;36m13:42:43[0m][[01;35mSTATE[0m] RESETTING DEVICE ---> IDLE
+[[01;36m13:42:43[0m][[01;35mSTATE[0m] IDLE ---> EXITING
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] Shutting down Plugin Manager
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] Unloaded plugin: 'control', version '1.4.50', maintainer 'FairRootGroup <fairroot@gsi.de>', homepage 'https://github.com/FairRootGroup/FairMQ'
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] Unloaded plugin: 'config', version '1.4.50', maintainer 'FairRootGroup <fairroot@gsi.de>', homepage 'https://github.com/FairRootGroup/FairMQ'
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] Shutting down Plugin Services
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] Shutting down device primary-server
+[[01;36m13:42:43[0m][[01;35mSTATE[0m] Exiting FairMQ state machine
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] removed RTDB container factory PassiveContFact
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] removed RTDB container factory ContainerFactory
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] removed RTDB container factory MagFieldContFact
+[[01;36m13:42:43[0m][[01;34mDEBUG[0m] removed RTDB container factory FairBaseContFact

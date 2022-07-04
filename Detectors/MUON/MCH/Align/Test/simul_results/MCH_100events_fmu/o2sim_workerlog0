@@ -1,0 +1,1587 @@
+[INFO] BINDING TO ADDRESS ipc:///tmp/o2sim-worker-notifications-57565 type pub
+[INFO] Parsed primary server address ipc:///tmp/o2sim-primary-get-57565
+[INFO] Parsed primary server status address ipc:///tmp/o2sim-primserv-info-57565
+[INFO] Parsed merger address ipc:///tmp/o2sim-hitmerger-simdata-57565
+[INFO] Waiting for configuration answer 
+[INFO] Configuration answer received, containing 1032 bytes 
+[INFO] COMMUNICATED ENGINE TGeant3
+[13:42:21][INFO] Setting up the simulation ...
+[13:42:21][INFO] Init CcdApi with UserAgentID: dphnmct7-1653651741-N2qmWq, Host: http://alice-ccdb.cern.ch/, alien-token: true
+[13:42:21][INFO] Init CcdApi with UserAgentID: dphnmct7-1653651741-N2qmWq, Host: http://alice-ccdb.cern.ch, alien-token: true
+[13:42:21][INFO] Initialized CCDB Manager at URL: http://alice-ccdb.cern.ch
+[13:42:21][INFO] Initialized CCDB Manager with timestamp : 1653651738913
+[13:42:21][INFO] RNG INITIAL SEED 2609185535
+[13:42:34][WARN] FairRun::SetOutputFile() deprecated. Use FairRootFileSink.
+Warning in <TGeoManager>: Changing system of units to ROOT units (cm, s, GeV).
+[13:42:34][INFO] Media file used: /Users/cz263673/alice/sw/osx_x86-64/O2/dev-local1/share/Detectors/Geometry/media.geo
+[13:42:34][INFO] MagneticField::CreateField: Maximim possible beam energy for requested beam is assumed
+[13:42:34][INFO] MagneticField::Print: Maps:
+[13:42:34][INFO] MagneticField::Print: Solenoid (-1*)5 kG, Dipole ON (-1) 
+[13:42:34][INFO] MagneticField::Print: Machine B fields for p-p  beam (7000 GeV): QGrad: 22.0002 Dipole: 37.8781
+[13:42:34][INFO] MagneticField::Print: Uses Sol30_Dip6_Hole  of $(O2_ROOT)/share/Common/maps/mfchebKGI_sym.root
+[13:42:34][INFO] Activating MCH module
+[13:42:34][INFO] Reading out MCH detector
+[13:42:34][INFO] Reading out MCH detector
+[13:42:34][INFO] O2RUNSIM SPECIFIC INIT CALLED
+[13:42:34][INFO] FairRootFileSink initialized.
+[13:42:34][INFO]  - cbmroot_0
+[13:42:34][INFO]     - o2sim_57567.root
+Info in <TGeoManager::TGeoManager>: Geometry FAIRGeom, FAIR geometry created
+[13:42:34][INFO] FairGeoMedia: Read media 
+[13:42:35][INFO] MagFieldContFact::createContainer: Creating mag.field container MagFieldParam
+[13:42:35][INFO] Loading simulation plugin libO2G3Setup
+[13:42:35][INFO] Setting up G3 sim from library code
+
+=============================================================
+ Virtual Monte Carlo Library
+ Version 2.0 ( 10 February 2022 )
+=============================================================
+
+=============================================================
+ Geant3 Virtual Monte Carlo 
+ Version 4.1 ( 17 March 2022 )
+ WWW : https://vmc-project.github.io/
+=============================================================
+
+-I- G3Config: Geant3 with TGeo has been created.
+[13:42:35][INFO] Stack.storeSecondaries : true		[ CODE ]
+Stack.pruneKine : true		[ CODE ]
+Stack.transportPrimary : all		[ CODE ]
+Stack.transportPrimaryFileName : 		[ CODE ]
+Stack.transportPrimaryFuncName : 		[ CODE ]
+Stack.transportPrimaryInvert : false		[ CODE ]
+
+
+ *------------------------------------------------------------------------------------* 
+ |                                                                                    | 
+ |  *------------------------------------------------------------------------------*  | 
+ |  |                                                                              |  | 
+ |  |                                                                              |  | 
+ |  |   PPP   Y   Y  TTTTT  H   H  III    A      Welcome to the Lund Monte Carlo!  |  | 
+ |  |   P  P   Y Y     T    H   H   I    A A     This is PYTHIA version 8.304      |  | 
+ |  |   PPP     Y      T    HHHHH   I   AAAAA    Last date of change:  9 Apr 2021  |  | 
+ |  |   P       Y      T    H   H   I   A   A                                      |  | 
+ |  |   P       Y      T    H   H  III  A   A    Now is 27 May 2022 at 13:42:35    |  | 
+ |  |                                                                              |  | 
+ |  |   Christian Bierlich;  Department of Astronomy and Theoretical Physics,      |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: christian.bierlich@thep.lu.se                                   |  | 
+ |  |   Nishita Desai;  Department of Theoretical Physics, Tata Institute,         |  | 
+ |  |      Homi Bhabha Road, Mumbai 400005, India;                                 |  | 
+ |  |      e-mail: desai@theory.tifr.res.in                                        |  | 
+ |  |   Leif Gellersen;  Department of Astronomy and Theoretical Physics,          |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: leif.gellersen@thep.lu.se                                       |  | 
+ |  |   Ilkka Helenius;  Department of Physics, University of Jyvaskyla,           |  | 
+ |  |      P.O. Box 35, FI-40014 University of Jyvaskyla, Finland;                 |  | 
+ |  |      e-mail: ilkka.m.helenius@jyu.fi                                         |  | 
+ |  |   Philip Ilten;  Department of Physics,                                      |  | 
+ |  |      University of Cincinnati, Cincinnati, OH 45221, USA;                    |  | 
+ |  |      e-mail: philten@cern.ch                                                 |  | 
+ |  |   Leif Lonnblad;  Department of Astronomy and Theoretical Physics,           |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: leif.lonnblad@thep.lu.se                                        |  | 
+ |  |   Stephen Mrenna;  Computing Division, Simulations Group,                    |  | 
+ |  |      Fermi National Accelerator Laboratory, MS 234, Batavia, IL 60510, USA;  |  | 
+ |  |      e-mail: mrenna@fnal.gov                                                 |  | 
+ |  |   Stefan Prestel;  Department of Astronomy and Theoretical Physics,          |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: stefan.prestel@thep.lu.se                                       |  | 
+ |  |   Christian Preuss;  School of Physics and Astronomy,                        |  | 
+ |  |      Monash University, PO Box 27, 3800 Melbourne, Australia;                |  | 
+ |  |      e-mail: christian.preuss@monash.edu                                     |  | 
+ |  |   Torbjorn Sjostrand;  Department of Astronomy and Theoretical Physics,      |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: torbjorn@thep.lu.se                                             |  | 
+ |  |   Peter Skands;  School of Physics and Astronomy,                            |  | 
+ |  |      Monash University, PO Box 27, 3800 Melbourne, Australia;                |  | 
+ |  |      e-mail: peter.skands@monash.edu                                         |  | 
+ |  |   Marius Utheim;  Department of Astronomy and Theoretical Physics,           |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: marius.utheim@thep.lu.se                                        |  | 
+ |  |   Rob Verheyen;  Department of Physics and Astronomy,                        |  | 
+ |  |      University College London, Gower St, Bloomsbury, London WC1E 6BT, UK;   |  | 
+ |  |      e-mail: r.verheyen@ucl.ac.uk                                            |  | 
+ |  |                                                                              |  | 
+ |  |   The main program reference is 'An Introduction to PYTHIA 8.2',             |  | 
+ |  |   T. Sjostrand et al, Comput. Phys. Commun. 191 (2015) 159                   |  | 
+ |  |   [arXiv:1410.3012 [hep-ph]]                                                 |  | 
+ |  |                                                                              |  | 
+ |  |   The main physics reference is the 'PYTHIA 6.4 Physics and Manual',         |  | 
+ |  |   T. Sjostrand, S. Mrenna and P. Skands, JHEP05 (2006) 026 [hep-ph/0603175]  |  | 
+ |  |                                                                              |  | 
+ |  |   An archive of program versions and documentation is found on the web:      |  | 
+ |  |   http://www.thep.lu.se/Pythia                                               |  | 
+ |  |                                                                              |  | 
+ |  |   This program is released under the GNU General Public Licence version 2.   |  | 
+ |  |   Please respect the MCnet Guidelines for Event Generator Authors and Users. |  | 
+ |  |                                                                              |  | 
+ |  |   Disclaimer: this program comes without any guarantees.                     |  | 
+ |  |   Beware of errors and use common sense when interpreting results.           |  | 
+ |  |                                                                              |  | 
+ |  |   Copyright (C) 2021 Torbjorn Sjostrand                                      |  | 
+ |  |                                                                              |  | 
+ |  |                                                                              |  | 
+ |  *------------------------------------------------------------------------------*  | 
+ |                                                                                    | 
+ *------------------------------------------------------------------------------------* 
+
+[13:42:35][INFO] Init 'DecayerPythia8' with following parameters
+[13:42:35][INFO] DecayerPythia8.config[0] : ${O2_ROOT}/share/Generators/pythia8/decays/base.cfg		[ CODE ]
+DecayerPythia8.config[1] : 		[ CODE ]
+DecayerPythia8.config[2] : 		[ CODE ]
+DecayerPythia8.config[3] : 		[ CODE ]
+DecayerPythia8.config[4] : 		[ CODE ]
+DecayerPythia8.config[5] : 		[ CODE ]
+DecayerPythia8.config[6] : 		[ CODE ]
+DecayerPythia8.config[7] : 		[ CODE ]
+DecayerPythia8.verbose : false		[ CODE ]
+DecayerPythia8.showChanged : false		[ CODE ]
+
+[13:42:35][INFO] Reading configuration from file: /Users/cz263673/alice/sw/osx_x86-64/O2/dev-local1/share/Generators/pythia8/decays/base.cfg
+
+ *-------  PYTHIA Flag + Mode + Parm + Word + FVec + MVec + PVec + WVec Settings (changes only)  ------------------* 
+ |                                                                                                                 | 
+ | Name                                          |                      Now |      Default         Min         Max | 
+ |                                               |                          |                                      | 
+ | Init:showChangedParticleData                  |                      off |           on                         | 
+ | ProcessLevel:all                              |                      off |           on                         | 
+ |                                                                                                                 | 
+ *-------  End PYTHIA Flag + Mode + Parm + Word + FVec + MVec + PVec + WVec Settings  -----------------------------* 
+[13:42:35][INFO] Setup global cuts and processes
+[13:42:35][INFO] Set default settings for processes and cuts.
+[13:42:35][INFO] Special process settings are enabled.
+[13:42:35][INFO] Special cut settings are enabled.
+[13:42:35][INFO] Printing 'SimUserDecay' parameters
+[13:42:35][INFO] SimUserDecay.pdglist : 		[ CODE ]
+
+[13:42:35][INFO] Initialising primary generator
+[13:42:35][INFO] Setting interaction diamond: position = {0,0,0} cm
+[13:42:35][INFO] Setting interaction diamond: width = {0,0,0} cm
+[13:42:35][INFO] Field in CAVE: 2
+[13:42:35][INFO] Setting up CAVE without ZDC
+Info in <TGeoManager::SetTopVolume>: Top volume is cave. Master volume is cave
+Info in <TGeoNavigator::BuildCache>: --- Maximum geometry depth set to 100
+Info in <TGeoManager::CheckGeometry>: Fixing runtime shapes...
+Info in <TGeoManager::CheckGeometry>: ...Nothing to fix
+Info in <TGeoManager::CloseGeometry>: Counting nodes...
+Info in <TGeoManager::Voxelize>: Voxelizing...
+Info in <TGeoManager::CloseGeometry>: Building cache...
+Info in <TGeoManager::CountLevels>: max level = 5, max placements = 128
+Info in <TGeoManager::CloseGeometry>: 20511 nodes/ 388 volume UID's in FAIR geometry
+Info in <TGeoManager::CloseGeometry>: ----------------modeler ready----------------
+[13:42:35][INFO] TGeometry will not be imported to VMC
+
+Warning in <TGeoManager::CloseGeometry>: geometry already closed
+[13:42:35][INFO] Add MCH alignable volumes
+Info in <TGeoManager::Export>: Exporting ccdb_object FAIR geometry as root file. Optimizations streamed.
+[13:42:35][INFO] Init CcdApi with UserAgentID: dphnmct7-1653651741-N2qmWq, Host: http://alice-ccdb.cern.ch/, alien-token: true
+Info in <TJAlienConnectionManager>: Opening connection to JCentral. Please wait
+Info in <TJAlienConnectionManager>: Opening connection to 137.138.47.216
+Info in <TJAlienConnectionManager>: Successfully connected to 137.138.47.216
+Info in <TJAlienFile::Open>: Accessing file /alice/data/CCDB/MCH/Calib/Align/12/47767/f9160ba9-bc3e-11ec-b66d-2a010e0a0b16 in SE <ALICE::SUBATECH::EOS>
+[13:42:43][INFO] Alignment from http://alice-ccdb.cern.ch/ for timestamp 1653651738913: , empty object for [MCH]
+Info in <TGeoManager::Export>: Exporting ccdb_object FAIR geometry as root file. Optimizations streamed.
+[13:42:43][INFO] FairMCApplication::InitGeometry: 0
+[13:42:43][INFO] Setting special cuts for MCH
+[13:42:43][INFO] Simulation RunID: 1653651755
+[13:42:43][INFO] CREATING BRANCH MCHHit
+[13:42:43][INFO] Creating branch for MCHHit with address 0x600003e65048
+[13:42:43][INFO] CREATING BRANCH MCTrack
+[13:42:43][INFO] Creating branch for MCTrack with address 0x7fb8c0715d28
+[13:42:43][INFO] CREATING BRANCH TrackRefs
+[13:42:43][INFO] Creating branch for TrackRefs with address 0x7fb8c0715de0
+[13:42:43][INFO] Monte Carlo Engine Initialisation with: TGeant3TGeo
+[13:42:43][INFO] ***  FairBaseParSet written to ROOT file   version: 1
+[13:42:43][INFO] ***  FairGeoParSet written to ROOT file   version: 1
+[13:42:43][INFO] ***  MagFieldParam written to ROOT file   version: 1
+--------------------------------------------------------------------------------
+--------------  actual containers in runtime database  -------------------------
+FairBaseParSet                                 class for parameter io
+FairGeoParSet                                  class for Geo parameter
+MagFieldParam                                  Mag. Field Parameters
+--------------  runs, versions  ------------------------------------------------
+run id
+  container                                        1st-inp    2nd-inp    output
+run: 1653651755
+  FairBaseParSet                                1653651755         -1          1
+  FairGeoParSet                                 1653651755         -1          1
+  MagFieldParam                                         -1         -1          1
+--------------  input/output  --------------------------------------------------
+first input: none
+second input: none
+output:
+OBJ: FairParRootFile	o2sim_57567_par.root	 : 0 at: 0x600005be7b60
+Root file I/O o2sim_57567_par.root is open
+detector I/Os:  FairGenericParIo
+Run: 1653651755
+Fill:      0
+Period: , isMC:0
+LHC State: 
+Start: Sun Feb 20 18:15:13     54372
+End  : Sun Apr  2 11:15:13     54372
+1st orbit: 0, 256 orbits per TF
+Beam0: Z:A =   0:  0, Energy = 0.000
+Beam1: Z:A =   0:  0, Energy = 0.000
+sqrt[s]    = 0.000
+crossing angle (radian) = 0.000000e+00
+magnet currents (A) L3 = 0.000, Dipole = 0
+Detectors: Cont.RO Triggers
+      MCH:    -       -    
+VMC: 0x7fb8bcab5c00
+[13:42:43][INFO] Init: Real time 8.90271 s, CPU time 2.12s
+[13:42:43][INFO] Init: Memory used 685.605 MB
+[13:42:43][INFO] MEM-STAMP END OF SIM INIT685.605 685.605 MB
+
+[13:42:43][INFO] Running with 2 sim workers 
+[13:42:43][INFO] CONNECTING TO ADDRESS ipc:///tmp/o2sim-workerinternal-57565 type push
+[13:42:43][INFO] BINDING TO ADDRESS ipc:///tmp/o2sim-workerinternal-57565 type pull
+[13:42:43][STATE] Starting FairMQ state machine --> IDLE
+[13:42:43][INFO] OCCUPYING A SEGMENT IN A SHARED REGION
+[13:42:43][INFO] FOUND ID TO ATTACH -1
+[13:42:43][INFO] ATTACH NOT SUCCESSFUL
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] CONNECTING TO ADDRESS ipc:///tmp/o2sim-workerinternal-57565 type push
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 1/100 part 1/1
+[13:42:43][STATE] Starting FairMQ state machine --> IDLE
+[13:42:43][INFO] OCCUPYING A SEGMENT IN A SHARED REGION
+[13:42:43][INFO] FOUND ID TO ATTACH -1
+[13:42:43][INFO] ATTACH NOT SUCCESSFUL
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] Found nonconforming detector CAVE
+[13:42:43][INFO] This event/chunk did 745 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 745 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.014884	
+[13:42:43][INFO] [W1] MEM-STAMP 686.352 686.352 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 3/100 part 1/1
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 2/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 935 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 935 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.0203738	
+[13:42:43][INFO] [W1] MEM-STAMP 686.434 686.434 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 4/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] Found nonconforming detector CAVE
+[13:42:43][INFO] This event/chunk did 920 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 920 steps
+[13:42:43][INFO] This event/chunk did 810 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 810 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.0260489	
+[13:42:43][INFO] [W1] MEM-STAMP 686.434 686.434 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W0] TIME-STAMP 0.0170951	
+[13:42:43][INFO] [W0] MEM-STAMP 14.3281 14.3281 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 5/100 part 1/1
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 6/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 791 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 791 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.031507	
+[13:42:43][INFO] [W1] MEM-STAMP 686.438 686.438 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 7/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 932 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 932 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.025861	
+[13:42:43][INFO] [W0] MEM-STAMP 14.7461 14.7461 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 995 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 995 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.037951	
+[13:42:43][INFO] [W1] MEM-STAMP 686.438 686.438 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 8/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 914 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 914 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.0363669	
+[13:42:43][INFO] [W0] MEM-STAMP 14.9102 14.9102 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 9/100 part 1/1
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 796 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 796 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.051188	
+[13:42:43][INFO] [W1] MEM-STAMP 686.449 686.449 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 10/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 789 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 11/100 part 1/1
+[13:42:43][INFO] This event/chunk did 789 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.0525281	
+[13:42:43][INFO] [W0] MEM-STAMP 15.1211 15.1211 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 12/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 884 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 884 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.0667179	
+[13:42:43][INFO] [W1] MEM-STAMP 686.449 686.449 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 13/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 782 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 782 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.0619769	
+[13:42:43][INFO] [W0] MEM-STAMP 15.4844 15.4844 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 861 steps
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 861 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.0720849	
+[13:42:43][INFO] [W1] MEM-STAMP 686.449 686.449 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 15/100 part 1/1
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 14/100 part 1/1
+[13:42:43][INFO] Stack: 2 out of 2 stored 
+
+[13:42:43][INFO] This event/chunk did 989 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 989 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.0777988	
+[13:42:43][INFO] [W1] MEM-STAMP 686.461 686.461 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] This event/chunk did 906 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 906 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.0707259	
+[13:42:43][INFO] [W0] MEM-STAMP 15.7344 15.7344 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 16/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 901 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 901 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.086201	
+[13:42:43][INFO] [W1] MEM-STAMP 686.461 686.461 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 17/100 part 1/1
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 18/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 801 steps
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 827 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 827 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.090905	
+[13:42:43][INFO] [W1] MEM-STAMP 686.461 686.461 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] This event/chunk did 801 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.0823741	
+[13:42:43][INFO] [W0] MEM-STAMP 15.8008 15.8008 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 19/100 part 1/1
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 20/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 1065 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 1065 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.102673	
+[13:42:43][INFO] [W1] MEM-STAMP 686.461 686.461 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 21/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 774 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 774 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.0978711	
+[13:42:43][INFO] [W0] MEM-STAMP 15.8711 15.8711 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 882 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 882 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.108767	
+[13:42:43][INFO] [W1] MEM-STAMP 686.461 686.461 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 22/100 part 1/1
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 23/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 827 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 827 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.113362	
+[13:42:43][INFO] [W1] MEM-STAMP 686.461 686.461 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 24/100 part 1/1
+[13:42:43][INFO] This event/chunk did 1021 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 1021 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.106763	
+[13:42:43][INFO] [W0] MEM-STAMP 15.9492 15.9492 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 25/100 part 1/1
+[13:42:43][INFO] Stack: 2 out of 2 stored 
+
+[13:42:43][INFO] This event/chunk did 829 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 829 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.119	
+[13:42:43][INFO] [W1] MEM-STAMP 686.473 686.473 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 893 steps
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 893 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.11517	
+[13:42:43][INFO] [W0] MEM-STAMP 16.0664 16.0664 MB
+
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 26/100 part 1/1
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 27/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 989 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 989 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.133634	
+[13:42:43][INFO] [W1] MEM-STAMP 686.473 686.473 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 28/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 921 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 921 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.129335	
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] [W0] MEM-STAMP 16.0742 16.0742 MB
+
+[13:42:43][INFO] This event/chunk did 859 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 859 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.139137	
+[13:42:43][INFO] [W1] MEM-STAMP 686.473 686.473 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 29/100 part 1/1
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 30/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 1061 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 1061 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.145291	
+[13:42:43][INFO] [W1] MEM-STAMP 686.477 686.477 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 910 steps
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 31/100 part 1/1
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 910 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.138025	
+[13:42:43][INFO] [W0] MEM-STAMP 16.0781 16.0781 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 32/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 918 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 918 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.150702	
+[13:42:43][INFO] [W1] MEM-STAMP 686.488 686.488 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 33/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 741 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 741 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.145115	
+[13:42:43][INFO] [W0] MEM-STAMP 16.0938 16.0977 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 797 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 797 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.155568	
+[13:42:43][INFO] [W1] MEM-STAMP 686.488 686.488 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 35/100 part 1/1
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 34/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 825 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 825 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.158898	
+[13:42:43][INFO] [W1] MEM-STAMP 686.504 686.504 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 36/100 part 1/1
+[13:42:43][INFO] Stack: 2 out of 2 stored 
+
+[13:42:43][INFO] This event/chunk did 1043 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 1043 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.15519	
+[13:42:43][INFO] [W0] MEM-STAMP 16.1523 16.1523 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 896 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 896 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.166207	
+[13:42:43][INFO] [W1] MEM-STAMP 686.504 686.504 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 37/100 part 1/1
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 38/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 751 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 751 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.17298	
+[13:42:43][INFO] [W1] MEM-STAMP 686.504 686.504 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 39/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 1075 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 1075 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.169397	
+[13:42:43][INFO] [W0] MEM-STAMP 16.207 16.207 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] Stack: 2 out of 2 stored 
+
+[13:42:43][INFO] This event/chunk did 755 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 755 steps
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W1] TIME-STAMP 0.180564	
+[13:42:43][INFO] [W1] MEM-STAMP 686.504 686.504 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 40/100 part 1/1
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 41/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 788 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 788 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.180102	
+[13:42:43][INFO] [W0] MEM-STAMP 16.2148 16.2148 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 918 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 918 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.19105	
+[13:42:43][INFO] [W1] MEM-STAMP 686.508 686.508 MB
+
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 42/100 part 1/1
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 43/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 780 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 780 steps
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 882 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.193422	
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] [W0] MEM-STAMP 16.2188 16.2188 MB
+
+[13:42:43][INFO] This event/chunk did 882 steps
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W1] TIME-STAMP 0.203873	
+[13:42:43][INFO] [W1] MEM-STAMP 686.508 686.508 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 44/100 part 1/1
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 45/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 825 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 990 steps
+[13:42:43][INFO] This event/chunk did 825 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 990 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.213848	
+[13:42:43][INFO] [W1] MEM-STAMP 686.508 686.508 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W0] TIME-STAMP 0.204819	
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W0] MEM-STAMP 16.2383 16.2383 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 46/100 part 1/1
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 47/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 917 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 917 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.224544	
+[13:42:43][INFO] [W1] MEM-STAMP 686.512 686.512 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 48/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 903 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 903 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.219788	
+[13:42:43][INFO] [W0] MEM-STAMP 16.25 16.25 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 49/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 854 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 854 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.231481	
+[13:42:43][INFO] [W1] MEM-STAMP 686.512 686.512 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 50/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 726 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 726 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.240512	
+[13:42:43][INFO] [W1] MEM-STAMP 686.512 686.512 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 51/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 1011 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 1011 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.25141	
+[13:42:43][INFO] [W1] MEM-STAMP 686.512 686.512 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 52/100 part 1/1
+[13:42:43][INFO] Stack: 4 out of 4 stored 
+
+[13:42:43][INFO] This event/chunk did 1828 steps
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 999 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 999 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.260479	
+[13:42:43][INFO] [W1] MEM-STAMP 686.512 686.512 MB
+
+[13:42:43][INFO] This event/chunk did 1828 steps
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W0] TIME-STAMP 0.252528	
+[13:42:43][INFO] [W0] MEM-STAMP 16.3359 16.3359 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 53/100 part 1/1
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 727 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 727 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.274784	
+[13:42:43][INFO] [W1] MEM-STAMP 686.512 686.512 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 54/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 796 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 796 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.279609	
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 55/100 part 1/1
+[13:42:43][INFO] [W0] MEM-STAMP 16.3555 16.3555 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 56/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 793 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 793 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.301604	
+[13:42:43][INFO] [W1] MEM-STAMP 686.512 686.512 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 57/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 954 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 954 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.299306	
+[13:42:43][INFO] [W0] MEM-STAMP 16.3672 16.3672 MB
+
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 757 steps
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 757 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.30989	
+[13:42:43][INFO] [W1] MEM-STAMP 686.512 686.512 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 59/100 part 1/1
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 58/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 898 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 898 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.307258	
+[13:42:43][INFO] [W0] MEM-STAMP 16.3672 16.3672 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 60/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 927 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 927 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.314664	
+[13:42:43][INFO] [W0] MEM-STAMP 16.3711 16.3711 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 61/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 890 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 890 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.326836	
+[13:42:43][INFO] [W0] MEM-STAMP 16.3711 16.3711 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] Stack: 4 out of 4 stored 
+
+[13:42:43][INFO] This event/chunk did 3013 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 3013 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.337793	
+[13:42:43][INFO] [W1] MEM-STAMP 686.516 686.516 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 62/100 part 1/1
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 63/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 771 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 771 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.340756	
+[13:42:43][INFO] [W1] MEM-STAMP 686.516 686.516 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 64/100 part 1/1
+
+ MZSTOR.  ZEBRA table base TAB(0) in /MZCC/ at adr   172282415     A44D22F HEX
+
+ MZSTOR.  Initialize Store  0  in /GCBANK/
+          with Store/Table at absolute adrs   166872341   172282415
+                                        HEX     9F24515     A44D22F
+                                        HEX    FFAD712A           0
+                              relative adrs    -5410518           0
+          with     1 Str. in     2 Links in   5300 Low words in 4999970 words.
+          This store has a fence of   16 words.
+
+ MZLOGL.  Set Log Level 0 for store  0
+1*****  GEANT Version  3.21/11 Released on 100298
+0*****  Correction Cradle Version  0.1100
+
+ MZDIV.   Initialize Division  Constant  in Store  0
+          NW/NWMAX=   20004000000,  MODE/KIND=  1  2
+          Division 20 initialized.
+
+ MZLINK.  Initialize Link Area  /GCLINK/  for Store  0 NL/NS=    20    20
+
+ MZLINK.  Initialize Link Area  /GCSLNK/  for Store  0 NL/NS=   100   100
+
+ Calculating cross section tables, see gphysi.dat for more information
+
+ Cross section calculation concluded successfully
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125002           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125004           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125005           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125006           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125008           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125010           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125012           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125014           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125016           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125017           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125019           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125020           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125022           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125024           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125025           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125027           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125029           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125030           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125032           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125034           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125036           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125037           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125039           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125040           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125042           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125044           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125046           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125047           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125049           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125051           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125052           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125053           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125054           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125056           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125058           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125060           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125064           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125065           0
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 947 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 947 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.334321	
+[13:42:43][INFO] [W0] MEM-STAMP 16.4258 16.4258 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 808 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] This event/chunk did 808 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.345991	
+[13:42:43][INFO] [W1] MEM-STAMP 686.516 686.516 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 65/100 part 1/1
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 66/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 833 steps
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 833 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.351943	
+[13:42:43][INFO] [W1] MEM-STAMP 686.516 686.516 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] This event/chunk did 727 steps
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 727 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.344478	
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 67/100 part 1/1
+[13:42:43][INFO] [W0] MEM-STAMP 16.4258 16.4258 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 68/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 995 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 995 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.358427	
+[13:42:43][INFO] [W1] MEM-STAMP 686.516 686.516 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 69/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 1026 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 1026 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.353031	
+[13:42:43][INFO] [W0] MEM-STAMP 16.4375 16.4375 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 907 steps
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 907 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.363315	
+[13:42:43][INFO] [W1] MEM-STAMP 686.523 686.523 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 70/100 part 1/1
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 71/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 1086 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 1086 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.368475	
+[13:42:43][INFO] [W1] MEM-STAMP 686.523 686.523 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] This event/chunk did 1080 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] This event/chunk did 1080 steps
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 72/100 part 1/1
+[13:42:43][INFO] [W0] TIME-STAMP 0.360464	
+[13:42:43][INFO] [W0] MEM-STAMP 16.4414 16.4414 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 901 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] This event/chunk did 901 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.373101	
+[13:42:43][INFO] [W1] MEM-STAMP 686.523 686.523 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 74/100 part 1/1
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 73/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] Stack: 2 out of 2 stored 
+
+[13:42:43][INFO] This event/chunk did 820 steps
+[13:42:43][INFO] This event/chunk did 858 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 858 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.379527	
+[13:42:43][INFO] [W1] MEM-STAMP 686.523 686.523 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 75/100 part 1/1
+[13:42:43][INFO] This event/chunk did 820 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.373239	
+[13:42:43][INFO] [W0] MEM-STAMP 16.4414 16.4414 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 76/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 874 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 874 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.3863	
+[13:42:43][INFO] [W1] MEM-STAMP 686.523 686.523 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 954 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] This event/chunk did 954 steps
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 77/100 part 1/1
+[13:42:43][INFO] [W0] TIME-STAMP 0.378957	
+[13:42:43][INFO] [W0] MEM-STAMP 16.4414 16.4414 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 78/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 912 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 1118 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 1118 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.392938	
+[13:42:43][INFO] [W1] MEM-STAMP 686.523 686.523 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] This event/chunk did 912 steps
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W0] TIME-STAMP 0.384567	
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 79/100 part 1/1
+[13:42:43][INFO] [W0] MEM-STAMP 16.4414 16.4414 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 80/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 805 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 805 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.397583	
+[13:42:43][INFO] [W1] MEM-STAMP 686.523 686.523 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 81/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 986 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 986 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.391785	
+[13:42:43][INFO] [W0] MEM-STAMP 16.6211 16.6211 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 1007 steps
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 1007 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.402586	
+[13:42:43][INFO] [W1] MEM-STAMP 686.523 686.523 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 82/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 1024 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] This event/chunk did 1024 steps
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 83/100 part 1/1
+[13:42:43][INFO] [W0] TIME-STAMP 0.397324	
+[13:42:43][INFO] [W0] MEM-STAMP 16.6211 16.6211 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 84/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 1007 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 1007 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.409782	
+[13:42:43][INFO] [W1] MEM-STAMP 686.523 686.523 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 863 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] This event/chunk did 863 steps
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 85/100 part 1/1
+[13:42:43][INFO] [W0] TIME-STAMP 0.404661	
+[13:42:43][INFO] [W0] MEM-STAMP 16.6211 16.6211 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 86/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 857 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 857 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.417425	
+[13:42:43][INFO] [W1] MEM-STAMP 686.523 686.523 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 87/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 988 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 988 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.411877	
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 747 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] [W0] MEM-STAMP 16.6328 16.6328 MB
+
+[13:42:43][INFO] This event/chunk did 747 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.421341	
+[13:42:43][INFO] [W1] MEM-STAMP 686.523 686.523 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 88/100 part 1/1
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 89/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 877 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 877 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.425915	
+[13:42:43][INFO] [W1] MEM-STAMP 686.523 686.523 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 90/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 927 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 927 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.419371	
+[13:42:43][INFO] [W0] MEM-STAMP 16.6445 16.6445 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 1002 steps
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 1002 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.432689	
+[13:42:43][INFO] [W1] MEM-STAMP 686.523 686.523 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 92/100 part 1/1
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 91/100 part 1/1
+
+ MZSTOR.  ZEBRA table base TAB(0) in /MZCC/ at adr   172282415     A44D22F HEX
+
+ MZSTOR.  Initialize Store  0  in /GCBANK/
+          with Store/Table at absolute adrs   166872341   172282415
+                                        HEX     9F24515     A44D22F
+                                        HEX    FFAD712A           0
+                              relative adrs    -5410518           0
+          with     1 Str. in     2 Links in   5300 Low words in 4999970 words.
+          This store has a fence of   16 words.
+
+ MZLOGL.  Set Log Level 0 for store  0
+1*****  GEANT Version  3.21/11 Released on 100298
+0*****  Correction Cradle Version  0.1100
+
+ MZDIV.   Initialize Division  Constant  in Store  0
+          NW/NWMAX=   20004000000,  MODE/KIND=  1  2
+          Division 20 initialized.
+
+ MZLINK.  Initialize Link Area  /GCLINK/  for Store  0 NL/NS=    20    20
+
+ MZLINK.  Initialize Link Area  /GCSLNK/  for Store  0 NL/NS=   100   100
+
+ Calculating cross section tables, see gphysi.dat for more information
+
+ Cross section calculation concluded successfully
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125003           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125007           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125009           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125011           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125013           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125015           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125018           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125021           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125023           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125026           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125028           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125031           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125033           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125035           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125038           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125041           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125043           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125045           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125048           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125050           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125055           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125057           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125059           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125061           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125062           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125063           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125066           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125069           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125071           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125074           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125077           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125079           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125081           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125083           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125085           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125087           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125090           0
+ **** GTRIGI: IEVENT=      1 IDEVT=      1 Random Seeds = 1374125092           0
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 1025 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 1025 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.436115	
+[13:42:43][INFO] [W1] MEM-STAMP 686.523 686.523 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 93/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 775 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 888 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 888 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.439265	
+[13:42:43][INFO] [W1] MEM-STAMP 686.523 686.523 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] This event/chunk did 775 steps
+[13:42:43][INFO] [W0] TIME-STAMP 0.4306	
+[13:42:43][INFO] [W0] MEM-STAMP 16.6445 16.6445 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 94/100 part 1/1
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 95/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 763 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 763 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.444081	
+[13:42:43][INFO] [W1] MEM-STAMP 686.523 686.523 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 823 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] This event/chunk did 823 steps
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 96/100 part 1/1
+[13:42:43][INFO] [W0] TIME-STAMP 0.436914	
+[13:42:43][INFO] [W0] MEM-STAMP 16.6484 16.6484 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 97/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 873 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 873 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.451079	
+[13:42:43][INFO] [W1] MEM-STAMP 686.527 686.527 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 835 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] This event/chunk did 835 steps
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 98/100 part 1/1
+[13:42:43][INFO] [W0] TIME-STAMP 0.444076	
+[13:42:43][INFO] [W0] MEM-STAMP 16.6523 16.6523 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] [W0] Primary chunk received
+[13:42:43][INFO] [W0] Processing 1 primary particles for event 99/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 848 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 848 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.456083	
+[13:42:43][INFO] [W1] MEM-STAMP 686.527 686.527 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] [W1] Processing 1 primary particles for event 100/100 part 1/1
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 832 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] Stack: 1 out of 1 stored 
+
+[13:42:43][INFO] This event/chunk did 850 steps
+[13:42:43][INFO] sending message with 5 parts
+[13:42:43][INFO] This event/chunk did 850 steps
+[13:42:43][INFO] [W1] TIME-STAMP 0.45961	
+[13:42:43][INFO] [W1] MEM-STAMP 686.527 686.527 MB
+
+[13:42:43][INFO] [W1] Requesting work chunk
+[13:42:43][INFO] [W1] Waiting for answer
+[13:42:43][INFO] This event/chunk did 832 steps
+[13:42:43][INFO] [W1] Primary chunk received
+[13:42:43][INFO] No payload; Server in state SERVING
+[13:42:43][INFO] [W1] simulation is done
+[13:42:43][INFO] FINISHING
+[13:42:43][INFO] [W0] TIME-STAMP 0.451163	
+[13:42:43][INFO] [W0] MEM-STAMP 16.6992 16.6992 MB
+
+[13:42:43][INFO] [W0] Requesting work chunk
+[13:42:43][INFO] [W0] Waiting for answer
+[13:42:43][INFO] 57567 caught signal 15 from source 57565
+[13:42:43][INFO] 57584 caught signal 15 from source 57565
