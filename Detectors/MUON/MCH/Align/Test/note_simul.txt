@@ -1,0 +1,39 @@
+// Notes for O2:MCH simulations:
+// README file could be found at O2/Detectors/MUON/MCH/Simulation/README.md for MCH simulations
+// README file could be found at O2/doc/DetectorSimulation.md for general O2 simulations
+
+// Hits generation:
+
+o2-sim -m MCH -n 10 -g fwmugen
+
+-m : selected modules
+-n : number of events
+-g : generator (fwmugen for forward muon generator)
+
+output to be used:
+- hits: o2sim_HitsMCH.root
+- geometry: o2sim_geometry.root o2sim_geometry-aligned.root
+
+
+
+// Digitization:
+
+o2-sim-digitizer-workflow
+
+output to be used:
+- digits: mchdigits.root
+
+
+// Track reconstruction:
+
+o2-mch-reco-workflow
+
+output to be used:
+- reconstructed tracks: mchtracks.root
+
+
+
+
+
+
+
