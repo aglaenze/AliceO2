@@ -436,7 +436,7 @@ AliMillePedeRecord* Alignment::ProcessTrack(Track& track, const o2::mch::geo::Tr
       fMeas[0] = (r[0] * fClustPos[0] + r[1] * fClustPos[1]);
       fMeas[1] = (r[3] * fClustPos[0] + r[4] * fClustPos[1]);
     }
-    printf("X: %f %f ; Y: %f %f ; Z: %f\n", fClustPos[0], fTrackPos[0], fClustPos[1], fTrackPos[1], fClustPos[2]);
+    printf("DE %d, X: %f %f ; Y: %f %f ; Z: %f\n", cluster->getDEId(), fClustPos[0], fTrackPos[0], fClustPos[1], fTrackPos[1], fClustPos[2]);
     // Set local equations
     LocalEquationX(r);
     LocalEquationY(r);
