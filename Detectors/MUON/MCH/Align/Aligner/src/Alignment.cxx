@@ -399,7 +399,7 @@ AliMillePedeRecord* Alignment::ProcessTrack(Track& track, const o2::mch::geo::Tr
 
     // fill local variables for this position --> one measurement
 
-    // FillDetElemData(cluster); // function to get the transformation matrix
+    FillDetElemData(cluster); // function to get the transformation matrix
 
     FillRecPointData(cluster);
     FillTrackParamData(&*itTrackParam);
@@ -1452,7 +1452,7 @@ LocalTrackParam Alignment::RefitStraightTrack(Track& track, Double_t z0) const
 //_____________________________________________________
 void Alignment::FillDetElemData(const Cluster* cluster)
 {
-  LOG(fatal) << __PRETTY_FUNCTION__ << " is disabled";
+  // LOG(fatal) << __PRETTY_FUNCTION__ << " is disabled";
   // LOG(info) << __PRETTY_FUNCTION__ << " is enabled";
 
   /// Get information of current detection element
@@ -1462,7 +1462,7 @@ void Alignment::FillDetElemData(const Cluster* cluster)
   cout << "Detector element ID: " << detElemId << "   Detector element number: " << fDetElemNumber << endl;
   // get detector element
   // const AliMUONGeometryDetElement detElement(detElemId);
-  auto fTransform = fTransformCreator(detElemId);
+  // auto fTransform = fTransformCreator(detElemId);
   /*
   get the global transformation matrix and store its inverse, in order to manually perform
   the global to Local transformations needed to calculate the derivatives
