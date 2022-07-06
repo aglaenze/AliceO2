@@ -351,8 +351,12 @@ void MisAligner::misAlign(std::vector<o2::detectors::AlignParam>& params, Bool_t
     params.emplace_back(lAP);
     for (int de = 0; de < DEofHC[hc].size(); de++) {
 
-      localDeltaTransform = misAlignDetElem();
+      localDeltaTransform.SetTranslation({0., 0., 0.});
+      localDeltaTransform.SetRotation(TGeoRotation());
 
+      if (DEofHC[hc][de] == 201 || DEofHC[hc][de] == 509 || DEofHC[hc][de] == 813) {
+        localDeltaTransform = misAlignDetElem();
+      }
       sname = fmt::format("MCH/HC{}/DE{}", hc, DEofHC[hc][de]);
       lAP.setSymName(sname.c_str());
 
