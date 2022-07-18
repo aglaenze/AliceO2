@@ -144,8 +144,8 @@ Alignment::Alignment()
     fRunNumber(0),
     fBFieldOn(kFALSE),
     fRefitStraightTracks(kFALSE),
-    fStartFac(256),
-    fResCutInitial(100),
+    fStartFac(65536),
+    fResCutInitial(1000),
     fResCut(100),
     fMillepede(0L), // to be modified
     fCluster(0L),
@@ -157,6 +157,7 @@ Alignment::Alignment()
     fDoEvaluation(kFALSE),
     fTrackParamOrig(0),
     fTrackParamNew(0),
+    fTrkClRes(0),
     fTFile(0),
     fTTree(0)
 {
@@ -246,8 +247,8 @@ void Alignment::init(std::string DataRecFName, std::string ConsRecFName)
   LOG(info) << "Free Parameters: " << nGlobal << " out of " << fNGlobal;
 
   // initialize millepede
-  // fMillepede->InitMille(fNGlobal, fNLocal, fNStdDev, fResCut, fResCutInitial, fGlobalParameterStatus);
-  fMillepede->InitMille(fNGlobal, fNLocal, fNStdDev, fResCut, fResCutInitial); // AliMillePede2 implementation
+  fMillepede->InitMille(fNGlobal, fNLocal, fNStdDev, fResCut, fResCutInitial, fGlobalParameterStatus);
+  // fMillepede->InitMille(fNGlobal, fNLocal, fNStdDev, fResCut, fResCutInitial); // AliMillePede2 implementation
   // fMillepede->InitDataRecStorage(kFALSE);
   fMillepede->SetDataRecFName(DataRecFName);
   fMillepede->SetConsRecFName(ConsRecFName);
@@ -271,18 +272,22 @@ void Alignment::init(std::string DataRecFName, std::string ConsRecFName)
     fMillepede->SetIterations(fStartFac);
   }
   // setup monitoring TFile
-  if (fDoEvaluation && fRefitStraightTracks) {
+  if (fDoEvaluation) {
+    // if (fDoEvaluation && fRefitStraightTracks) {
     fTFile = new TFile("Alignment.root", "RECREATE");
     fTTree = new TTree("TreeE", "Evaluation");
 
     const Int_t kSplitlevel = 98;
     const Int_t kBufsize = 32000;
 
-    fTrackParamOrig = new LocalTrackParam();
-    fTTree->Branch("fTrackParamOrig", "LocalTrackParam", &fTrackParamOrig, kBufsize, kSplitlevel);
+    // fTrackParamOrig = new LocalTrackParam();
+    // fTTree->Branch("fTrackParamOrig", "LocalTrackParam", &fTrackParamOrig, kBufsize, kSplitlevel);
 
-    fTrackParamNew = new LocalTrackParam();
-    fTTree->Branch("fTrackParamNew", "LocalTrackParam", &fTrackParamNew, kBufsize, kSplitlevel);
+    // fTrackParamNew = new LocalTrackParam();
+    // fTTree->Branch("fTrackParamNew", "LocalTrackParam", &fTrackParamNew, kBufsize, kSplitlevel);
+
+    fTrkClRes = new o2::mch::LocalTrackClusterResidual();
+    fTTree->Branch("fTrkClRes", &fTrkClRes, kBufsize, kSplitlevel);
   }
 }
 
@@ -351,25 +356,25 @@ AliMillePedeRecord* Alignment::ProcessTrack(Track& track, const o2::mch::geo::Tr
     const LocalTrackParam trackParam(RefitStraightTrack(track, fTrackPos0[2]));
 
     // fill evaluation tree
-    if (fTrackParamOrig) {
-      fTrackParamOrig->fTrackX = fTrackPos0[0];
-      fTrackParamOrig->fTrackY = fTrackPos0[1];
-      fTrackParamOrig->fTrackZ = fTrackPos0[2];
-      fTrackParamOrig->fTrackSlopeX = fTrackSlope[0];
-      fTrackParamOrig->fTrackSlopeY = fTrackSlope[1];
-    }
+    // if (fTrackParamOrig) {
+    //   fTrackParamOrig->fTrackX = fTrackPos0[0];
+    //   fTrackParamOrig->fTrackY = fTrackPos0[1];
+    //   fTrackParamOrig->fTrackZ = fTrackPos0[2];
+    //   fTrackParamOrig->fTrackSlopeX = fTrackSlope0[0];
+    //   fTrackParamOrig->fTrackSlopeY = fTrackSlope0[1];
+    // }
 
-    // new ones
-    if (fTrackParamNew) {
-      fTrackParamNew->fTrackX = trackParam.fTrackX;
-      fTrackParamNew->fTrackY = trackParam.fTrackY;
-      fTrackParamNew->fTrackZ = trackParam.fTrackZ;
-      fTrackParamNew->fTrackSlopeX = trackParam.fTrackSlopeX;
-      fTrackParamNew->fTrackSlopeY = trackParam.fTrackSlopeY;
-    }
+    // // new ones
+    // if (fTrackParamNew) {
+    //   fTrackParamNew->fTrackX = trackParam.fTrackX;
+    //   fTrackParamNew->fTrackY = trackParam.fTrackY;
+    //   fTrackParamNew->fTrackZ = trackParam.fTrackZ;
+    //   fTrackParamNew->fTrackSlopeX = trackParam.fTrackSlopeX;
+    //   fTrackParamNew->fTrackSlopeY = trackParam.fTrackSlopeY;
+    // }
 
-    if (fTTree)
-      fTTree->Fill();
+    // if (fTTree)
+    //   fTTree->Fill();
 
     /*
     copy new parameters to stored ones for derivatives calculation
@@ -379,8 +384,8 @@ AliMillePedeRecord* Alignment::ProcessTrack(Track& track, const o2::mch::geo::Tr
       fTrackPos0[0] = trackParam.fTrackX;
       fTrackPos0[1] = trackParam.fTrackY;
       fTrackPos0[2] = trackParam.fTrackZ;
-      fTrackSlope[0] = trackParam.fTrackSlopeX;
-      fTrackSlope[1] = trackParam.fTrackSlopeY;
+      fTrackSlope0[0] = trackParam.fTrackSlopeX;
+      fTrackSlope0[1] = trackParam.fTrackSlopeY;
     }
   }
 
@@ -400,7 +405,6 @@ AliMillePedeRecord* Alignment::ProcessTrack(Track& track, const o2::mch::geo::Tr
     // fill local variables for this position --> one measurement
 
     FillDetElemData(cluster); // function to get the transformation matrix
-
     FillRecPointData(cluster);
     FillTrackParamData(&*itTrackParam);
 
@@ -412,7 +416,7 @@ AliMillePedeRecord* Alignment::ProcessTrack(Track& track, const o2::mch::geo::Tr
     TMatrixD transMat(3, 4);
     trans.GetTransformMatrix(transMat);
     // transMat.Print();
-    Double_t r[9];
+    Double_t r[12];
     r[0] = transMat(0, 0);
     r[1] = transMat(0, 1);
     r[2] = transMat(0, 2);
@@ -422,6 +426,9 @@ AliMillePedeRecord* Alignment::ProcessTrack(Track& track, const o2::mch::geo::Tr
     r[6] = transMat(2, 0);
     r[7] = transMat(2, 1);
     r[8] = transMat(2, 2);
+    r[9] = transMat(0, 3);
+    r[9] = transMat(1, 3);
+    r[9] = transMat(2, 3);
 
     // calculate measurements
     if (fBFieldOn) {
@@ -429,7 +436,6 @@ AliMillePedeRecord* Alignment::ProcessTrack(Track& track, const o2::mch::geo::Tr
       // use residuals (cluster - track) for measurement
       fMeas[0] = r[0] * (fClustPos[0] - fTrackPos[0]) + r[1] * (fClustPos[1] - fTrackPos[1]);
       fMeas[1] = r[3] * (fClustPos[0] - fTrackPos[0]) + r[4] * (fClustPos[1] - fTrackPos[1]);
-
     } else {
 
       // use cluster position for measurement
@@ -437,6 +443,18 @@ AliMillePedeRecord* Alignment::ProcessTrack(Track& track, const o2::mch::geo::Tr
       fMeas[1] = (r[3] * fClustPos[0] + r[4] * fClustPos[1]);
     }
     printf("DE %d, X: %f %f ; Y: %f %f ; Z: %f\n", cluster->getDEId(), fClustPos[0], fTrackPos[0], fClustPos[1], fTrackPos[1], fClustPos[2]);
+
+    if (fDoEvaluation) {
+      fTrkClRes->fClDetElem = cluster->getDEId();
+      fTrkClRes->fClDetElemNumber = GetDetElemNumber(cluster->getDEId());
+      fTrkClRes->fClusterX = fClustPos[0];
+      fTrkClRes->fClusterY = fClustPos[1];
+      fTrkClRes->fTrackX = fTrackPos0[0] + fTrackSlope0[0] * (fTrackPos[2] - fTrackPos0[2]); // fTrackPos[0];
+      fTrkClRes->fTrackY = fTrackPos0[1] + fTrackSlope0[1] * (fTrackPos[2] - fTrackPos0[2]); // fTrackPos[1];
+
+      if (fTTree)
+        fTTree->Fill();
+    }
     // Set local equations
     LocalEquationX(r);
     LocalEquationY(r);
@@ -1536,6 +1554,7 @@ void Alignment::LocalEquationX(const Double_t* r)
 
     // use properly extrapolated position for derivatives vs 'delta_phi_z'
     SetGlobalDerivative(fDetElemNumber * fgNParCh + 2, -r[1] * trackPosX + r[0] * trackPosY);
+    // SetGlobalDerivative(fDetElemNumber * fgNParCh + 2, -r[1] * (trackPosX - r[9]) + r[0] * (trackPosY - r[10]));
 
     // use slopes at origin for derivatives vs 'delta_z'
     SetGlobalDerivative(fDetElemNumber * fgNParCh + 3, r[0] * fTrackSlope0[0] + r[1] * fTrackSlope0[1]);
