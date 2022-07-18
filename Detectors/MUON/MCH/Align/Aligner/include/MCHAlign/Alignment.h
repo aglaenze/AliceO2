@@ -61,6 +61,24 @@ class LocalTrackParam
   double fTrackSlopeY = 0.0;
 }; // class LocalTrackParam
 
+/// local track residual, for tempoarary eval
+class LocalTrackClusterResidual
+{
+ public:
+  //* construction
+  LocalTrackClusterResidual() = default;
+  ~LocalTrackClusterResidual() = default;
+
+  // private:
+  //* y and z
+  int fClDetElem = 0.0;
+  int fClDetElemNumber = 0.0;
+  double fClusterX = 0.0;
+  double fClusterY = 0.0;
+  double fTrackX = 0.0;
+  double fTrackY = 0.0;
+}; // class LocalTrackClusterResidual
+
 class Alignment : public TObject
 {
 
@@ -419,6 +437,8 @@ class Alignment : public TObject
   /// original local track params
   LocalTrackParam* fTrackParamOrig;
   LocalTrackParam* fTrackParamNew;
+
+  LocalTrackClusterResidual* fTrkClRes;
 
   /// output TFile
   TFile* fTFile;
