@@ -18,6 +18,7 @@
 #define ALICEO2_MCH_ALIGNMENT
 
 #include <string>
+#include <vector>
 
 #include "Align/Millepede2Record.h"
 #include "Align/Mille.h"
@@ -31,6 +32,7 @@
 
 #include "MCHTracking/Track.h"
 #include "DataFormatsMCH/Cluster.h"
+#include "DetectorsCommonDataFormats/AlignParam.h"
 
 #include <TFile.h>
 #include <TGeoMatrix.h>
@@ -77,6 +79,8 @@ class LocalTrackClusterResidual
   double fClusterY = 0.0;
   double fTrackX = 0.0;
   double fTrackY = 0.0;
+  double fTrackSlopeX = 0.0;
+  double fTrackSlopeY = 0.0;
 }; // class LocalTrackClusterResidual
 
 class Alignment : public TObject
@@ -291,7 +295,7 @@ class Alignment : public TObject
   /// get error on a given parameter
   Double_t GetParError(Int_t iPar) const;
 
-  // AliMUONGeometryTransformer* ReAlign(const AliMUONGeometryTransformer* transformer, const double* misAlignments, Bool_t verbose);
+  void ReAlign(std::vector<o2::detectors::AlignParam>& params, const double* misAlignments);
 
   void SetAlignmentResolution(const TClonesArray* misAlignArray, Int_t chId, Double_t chResX, Double_t chResY, Double_t deResX, Double_t deResY);
 
@@ -328,6 +332,8 @@ class Alignment : public TObject
   void LocalEquationY(const Double_t* r);
 
   TGeoCombiTrans DeltaTransform(const double* detElemMisAlignment) const;
+
+  bool isMatrixConvertedToAngles(const double* rot, double& psi, double& theta, double& phi) const;
 
   ///@name utilities
   //@{

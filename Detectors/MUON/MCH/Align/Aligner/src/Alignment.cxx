@@ -442,7 +442,7 @@ AliMillePedeRecord* Alignment::ProcessTrack(Track& track, const o2::mch::geo::Tr
       fMeas[0] = (r[0] * fClustPos[0] + r[1] * fClustPos[1]);
       fMeas[1] = (r[3] * fClustPos[0] + r[4] * fClustPos[1]);
     }
-    printf("DE %d, X: %f %f ; Y: %f %f ; Z: %f\n", cluster->getDEId(), fClustPos[0], fTrackPos[0], fClustPos[1], fTrackPos[1], fClustPos[2]);
+    // printf("DE %d, X: %f %f ; Y: %f %f ; Z: %f\n", cluster->getDEId(), fClustPos[0], fTrackPos[0], fClustPos[1], fTrackPos[1], fClustPos[2]);
 
     if (fDoEvaluation) {
       fTrkClRes->fClDetElem = cluster->getDEId();
@@ -451,6 +451,8 @@ AliMillePedeRecord* Alignment::ProcessTrack(Track& track, const o2::mch::geo::Tr
       fTrkClRes->fClusterY = fClustPos[1];
       fTrkClRes->fTrackX = fTrackPos0[0] + fTrackSlope0[0] * (fTrackPos[2] - fTrackPos0[2]); // fTrackPos[0];
       fTrkClRes->fTrackY = fTrackPos0[1] + fTrackSlope0[1] * (fTrackPos[2] - fTrackPos0[2]); // fTrackPos[1];
+      fTrkClRes->fTrackSlopeX = fTrackSlope0[0];
+      fTrkClRes->fTrackSlopeY = fTrackSlope0[1];
 
       if (fTTree)
         fTTree->Fill();
@@ -1167,176 +1169,112 @@ Double_t Alignment::GetParError(Int_t iPar) const
   return fMillepede->GetParError(iPar);
 }
 
-// //______________________________________________________________________
-// AliMUONGeometryTransformer* Alignment::ReAlign(
-//   const AliMUONGeometryTransformer* transformer,
-//   const double* misAlignments, Bool_t)
-// {
+//______________________________________________________________________
+void Alignment::ReAlign(
+  std::vector<o2::detectors::AlignParam>& params,
+  const double* misAlignments)
+{
 
-//   /// Returns a new AliMUONGeometryTransformer with the found misalignments
-//   /// applied.
+  /// Returns a new AliMUONGeometryTransformer with the found misalignments
+  /// applied.
 
-//   // Takes the internal geometry module transformers, copies them
-//   // and gets the Detection Elements from them.
-//   // Takes misalignment parameters and applies these
-//   // to the local transform of the Detection Element
-//   // Obtains the global transform by multiplying the module transformer
-//   // transformation with the local transformation
-//   // Applies the global transform to a new detection element
-//   // Adds the new detection element to a new module transformer
-//   // Adds the new module transformer to a new geometry transformer
-//   // Returns the new geometry transformer
+  // Takes the internal geometry module transformers, copies them
+  // and gets the Detection Elements from them.
+  // Takes misalignment parameters and applies these
+  // to the local transform of the Detection Element
+  // Obtains the global transform by multiplying the module transformer
+  // transformation with the local transformation
+  // Applies the global transform to a new detection element
+  // Adds the new detection element to a new module transformer
+  // Adds the new module transformer to a new geometry transformer
+  // Returns the new geometry transformer
 
-//   Double_t lModuleMisAlignment[fgNParCh] = {0};
-//   Double_t lDetElemMisAlignment[fgNParCh] = {0};
-//   const TClonesArray* oldMisAlignArray(transformer->GetMisAlignmentData());
+  Double_t lModuleMisAlignment[fgNParCh] = {0};
+  Double_t lDetElemMisAlignment[fgNParCh] = {0};
 
-//   AliMUONGeometryTransformer* newGeometryTransformer = new AliMUONGeometryTransformer();
-//   for (Int_t iMt = 0; iMt < transformer->GetNofModuleTransformers(); ++iMt) {
+  o2::detectors::AlignParam lAP;
+  for (int hc = 0; hc < 20; hc++) {
 
-//     // module transformers
-//     const AliMUONGeometryModuleTransformer* kModuleTransformer = transformer->GetModuleTransformer(iMt, kTRUE);
+    TGeoCombiTrans localDeltaTransform;
+    // localDeltaTransform.SetTranslation({0., 0., 0.});
+    // localDeltaTransform.SetRotation(TGeoRotation());
+    localDeltaTransform = DeltaTransform(lModuleMisAlignment);
 
-//     AliMUONGeometryModuleTransformer* newModuleTransformer = new AliMUONGeometryModuleTransformer(iMt);
-//     newGeometryTransformer->AddModuleTransformer(newModuleTransformer);
+    std::string sname = fmt::format("MCH/HC{}", hc);
+    lAP.setSymName(sname.c_str());
 
-//     // get transformation
-//     TGeoHMatrix deltaModuleTransform(DeltaTransform(lModuleMisAlignment));
+    double lPsi, lTheta, lPhi = 0.;
+    if (!isMatrixConvertedToAngles(localDeltaTransform.GetRotationMatrix(),
+                                   lPsi, lTheta, lPhi)) {
+      LOG(error) << "Problem extracting angles!";
+    }
 
-//     // update module
-//     TGeoHMatrix moduleTransform(*kModuleTransformer->GetTransformation());
-//     TGeoHMatrix newModuleTransform(AliMUONGeometryBuilder::Multiply(deltaModuleTransform, moduleTransform));
-//     newModuleTransformer->SetTransformation(newModuleTransform);
+    LOG(info) << fmt::format(
+      "Module {} is {} : {} : Local Delta | X: {:+f} Y: {:+f} Z: {:+f} | "
+      "pitch: {:+f} roll: {:+f} yaw: {:+f}\n",
+      hc, lAP.getSymName(), lAP.getAlignableID(),
+      localDeltaTransform.GetTranslation()[0],
+      localDeltaTransform.GetTranslation()[1],
+      localDeltaTransform.GetTranslation()[2], lPsi, lTheta, lPhi);
+    if (!lAP.setLocalParams(localDeltaTransform)) {
+      LOG(error) << "Could not set local params for " << sname.c_str();
+    }
+    LOG(info) << fmt::format(
+      "Module {} is {} : {} : Global Delta | X: {:+f} Y: {:+f} Z: {:+f} | "
+      "pitch: {:+f} roll: {:+f} yaw: {:+f}\n",
+      hc, lAP.getSymName(), lAP.getAlignableID(), lAP.getX(), lAP.getY(),
+      lAP.getZ(), lAP.getPsi(), lAP.getTheta(), lAP.getPhi());
+    // lAP.print();
+    lAP.applyToGeometry();
+    params.emplace_back(lAP);
+    for (int de = 0; de < fgNDetElemHalfCh[hc]; de++) {
 
-//     // Get matching old alignment and update current matrix accordingly
-//     if (oldMisAlignArray) {
+      // store detector element id and number
+      const Int_t iDetElemId = fgDetElemHalfCh[hc][de];
+      if (DetElemIsValid(iDetElemId)) {
 
-//       const AliAlignObjMatrix* oldAlignObj(0);
-//       const Int_t moduleId(kModuleTransformer->GetModuleId());
-//       const Int_t volId = AliGeomManager::LayerToVolUID(AliGeomManager::kMUON, moduleId);
-//       for (Int_t pos = 0; pos < oldMisAlignArray->GetEntriesFast(); ++pos) {
+        const Int_t iDetElemNumber(GetDetElemNumber(iDetElemId));
 
-//         const AliAlignObjMatrix* localAlignObj(dynamic_cast<const AliAlignObjMatrix*>(oldMisAlignArray->At(pos)));
-//         if (localAlignObj && localAlignObj->GetVolUID() == volId) {
-//           oldAlignObj = localAlignObj;
-//           break;
-//         }
-//       }
+        for (int i = 0; i < fgNParCh; ++i) {
+          lDetElemMisAlignment[i] = 0.0;
+          if (hc < fgNHalfCh) {
+            lDetElemMisAlignment[i] = misAlignments[iDetElemNumber * fgNParCh + i];
+          }
+        }
+        sname = fmt::format("MCH/HC{}/DE{}", hc, fgDetElemHalfCh[hc][de]);
+        lAP.setSymName(sname.c_str());
+        localDeltaTransform = DeltaTransform(lDetElemMisAlignment);
+        if (!isMatrixConvertedToAngles(localDeltaTransform.GetRotationMatrix(),
+                                       lPsi, lTheta, lPhi)) {
+          LOG(error) << "Problem extracting angles for " << sname.c_str();
+        }
+        LOG(info) << fmt::format(
+          "DetElem {} is {} : {} : Local Delta| X: {:+f} Y: {:+f} Z: {:+f} | "
+          "pitch: {:+f} roll: {:+f} yaw: {:+f}\n",
+          de, lAP.getSymName(), lAP.getAlignableID(),
+          localDeltaTransform.GetTranslation()[0],
+          localDeltaTransform.GetTranslation()[1],
+          localDeltaTransform.GetTranslation()[2], lPsi, lTheta, lPhi);
+        if (!lAP.setLocalParams(localDeltaTransform)) {
+          LOG(error) << "  Could not set local params for " << sname.c_str();
+        }
+        LOG(info) << fmt::format(
+          "DetElem {} is {} : {} : Global Delta | X: {:+f} Y: {:+f} Z: {:+f} | "
+          "pitch: {:+f} roll: {:+f} yaw: {:+f}\n",
+          de, lAP.getSymName(), lAP.getAlignableID(), lAP.getX(), lAP.getY(),
+          lAP.getZ(), lAP.getPsi(), lAP.getTheta(), lAP.getPhi());
+        lAP.applyToGeometry();
+        params.emplace_back(lAP);
+      } else {
 
-//       // multiply
-//       if (oldAlignObj) {
+        // "invalid" detector elements come from MTR and are left unchanged
+        LOG(info) << fmt::format("Keeping detElement {} unchanged\n", iDetElemId);
+      }
+    }
+  }
 
-//         TGeoHMatrix oldMatrix;
-//         oldAlignObj->GetMatrix(oldMatrix);
-//         deltaModuleTransform.Multiply(&oldMatrix);
-//       }
-//     }
-
-//     // Create module mis alignment matrix
-//     newGeometryTransformer->AddMisAlignModule(kModuleTransformer->GetModuleId(), deltaModuleTransform);
-
-//     AliMpExMap* detElements = kModuleTransformer->GetDetElementStore();
-
-//     TIter next(detElements->CreateIterator());
-//     AliMUONGeometryDetElement* detElement;
-//     Int_t iDe(-1);
-//     while ((detElement = static_cast<AliMUONGeometryDetElement*>(next()))) {
-//       ++iDe;
-//       // make a new detection element
-//       AliMUONGeometryDetElement* newDetElement = new AliMUONGeometryDetElement(detElement->GetId(), detElement->GetVolumePath());
-//       TString lDetElemName(detElement->GetDEName());
-//       lDetElemName.ReplaceAll("DE", "");
-
-//       // store detector element id and number
-//       const Int_t iDetElemId = lDetElemName.Atoi();
-//       if (DetElemIsValid(iDetElemId)) {
-
-//         const Int_t iDetElemNumber(GetDetElemNumber(iDetElemId));
-
-//         for (int i = 0; i < fgNParCh; ++i) {
-//           lDetElemMisAlignment[i] = 0.0;
-//           if (iMt < fgNTrkMod) {
-//             lDetElemMisAlignment[i] = misAlignments[iDetElemNumber * fgNParCh + i];
-//           }
-//         }
-
-//         // get transformation
-//         TGeoHMatrix deltaGlobalTransform(DeltaTransform(lDetElemMisAlignment));
-
-//         // update module
-//         TGeoHMatrix globalTransform(*detElement->GetGlobalTransformation());
-//         TGeoHMatrix newGlobalTransform(AliMUONGeometryBuilder::Multiply(deltaGlobalTransform, globalTransform));
-//         newDetElement->SetGlobalTransformation(newGlobalTransform);
-//         newModuleTransformer->GetDetElementStore()->Add(newDetElement->GetId(), newDetElement);
-
-//         // Get matching old alignment and update current matrix accordingly
-//         if (oldMisAlignArray) {
-
-//           const AliAlignObjMatrix* oldAlignObj(0);
-//           const int detElemId(detElement->GetId());
-//           const Int_t volId = AliGeomManager::LayerToVolUID(AliGeomManager::kMUON, detElemId);
-//           for (Int_t pos = 0; pos < oldMisAlignArray->GetEntriesFast(); ++pos) {
-
-//             const AliAlignObjMatrix* localAlignObj(dynamic_cast<const AliAlignObjMatrix*>(oldMisAlignArray->At(pos)));
-//             if (localAlignObj && localAlignObj->GetVolUID() == volId) {
-//               oldAlignObj = localAlignObj;
-//               break;
-//             }
-//           }
-
-//           // multiply
-//           if (oldAlignObj) {
-
-//             TGeoHMatrix oldMatrix;
-//             oldAlignObj->GetMatrix(oldMatrix);
-//             deltaGlobalTransform.Multiply(&oldMatrix);
-//           }
-//         }
-
-//         // Create misalignment matrix
-//         newGeometryTransformer->AddMisAlignDetElement(detElement->GetId(), deltaGlobalTransform);
-
-//       } else {
-
-//         // "invalid" detector elements come from MTR and are left unchanged
-//         Aliinfo(Form("Keeping detElement %i unchanged", iDetElemId));
-
-//         // update module
-//         TGeoHMatrix globalTransform(*detElement->GetGlobalTransformation());
-//         newDetElement->SetGlobalTransformation(globalTransform);
-//         newModuleTransformer->GetDetElementStore()->Add(newDetElement->GetId(), newDetElement);
-
-//         // Get matching old alignment and update current matrix accordingly
-//         if (oldMisAlignArray) {
-
-//           const AliAlignObjMatrix* oldAlignObj(0);
-//           const int detElemId(detElement->GetId());
-//           const Int_t volId = AliGeomManager::LayerToVolUID(AliGeomManager::kMUON, detElemId);
-//           for (Int_t pos = 0; pos < oldMisAlignArray->GetEntriesFast(); ++pos) {
-
-//             const AliAlignObjMatrix* localAlignObj(dynamic_cast<const AliAlignObjMatrix*>(oldMisAlignArray->At(pos)));
-//             if (localAlignObj && localAlignObj->GetVolUID() == volId) {
-//               oldAlignObj = localAlignObj;
-//               break;
-//             }
-//           }
-
-//           // multiply
-//           if (oldAlignObj) {
-
-//             TGeoHMatrix oldMatrix;
-//             oldAlignObj->GetMatrix(oldMatrix);
-//             newGeometryTransformer->AddMisAlignDetElement(detElement->GetId(), oldMatrix);
-//           }
-//         }
-//       }
-//     }
-
-//     newGeometryTransformer->AddModuleTransformer(newModuleTransformer);
-//   }
-
-//   return newGeometryTransformer;
-// }
+  // return params;
+}
 
 //______________________________________________________________________
 void Alignment::SetAlignmentResolution(const TClonesArray* misAlignArray, Int_t rChId, Double_t chResX, Double_t chResY, Double_t deResX, Double_t deResY)
@@ -1477,7 +1415,7 @@ void Alignment::FillDetElemData(const Cluster* cluster)
   // get detector element number from Alice ID
   const Int_t detElemId = cluster->getDEId();
   fDetElemNumber = GetDetElemNumber(detElemId);
-  cout << "Detector element ID: " << detElemId << "   Detector element number: " << fDetElemNumber << endl;
+  // cout << "Detector element ID: " << detElemId << "   Detector element number: " << fDetElemNumber << endl;
   // get detector element
   // const AliMUONGeometryDetElement detElement(detElemId);
   // auto fTransform = fTransformCreator(detElemId);
@@ -1487,7 +1425,7 @@ void Alignment::FillDetElemData(const Cluster* cluster)
   */
   // fTransform = fTransform.Inverse();
   // fTransform.GetTransformMatrix(fGeoCombiTransInverse);
-  cout << "done with FillDetElemData" << endl;
+  // cout << "done with FillDetElemData" << endl;
 }
 
 //______________________________________________________________________
@@ -1621,6 +1559,23 @@ TGeoCombiTrans Alignment::DeltaTransform(const double* lMisAlignment) const
 
   // combined rotation and translation.
   return TGeoCombiTrans(deltaTrans, deltaRot);
+}
+
+bool Alignment::isMatrixConvertedToAngles(const double* rot, double& psi, double& theta, double& phi) const
+{
+  /// Calculates the Euler angles in "x y z" notation
+  /// using the rotation matrix
+  /// Returns false in case the rotation angles can not be
+  /// extracted from the matrix
+  //
+  if (std::abs(rot[0]) < 1e-7 || std::abs(rot[8]) < 1e-7) {
+    LOG(error) << "Failed to extract roll-pitch-yall angles!";
+    return false;
+  }
+  psi = std::atan2(-rot[5], rot[8]);
+  theta = std::asin(rot[2]);
+  phi = std::atan2(-rot[1], rot[0]);
+  return true;
 }
 
 //______________________________________________________________________
