@@ -1,0 +1,114 @@
+[[01;36m10:04:17[0m][[01;32mINFO[0m] 
+      ______      _    _______  _________ 
+     / ____/___ _(_)_______   |/  /_  __ \    version 1.4.50
+    / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+   / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+  /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2022 GSI
+
+[[01;36m10:04:17[0m][[01;35mSTATE[0m] Starting FairMQ state machine --> IDLE
+[[01;36m10:04:17[0m][[01;33mWARN[0m] Signal handling (e.g. Ctrl-C) has been deactivated.
+[[01;36m10:04:17[0m][[01;35mSTATE[0m] IDLE ---> INITIALIZING DEVICE
+[[01;36m10:04:17[0m][[01;35mSTATE[0m] INITIALIZING DEVICE ---> INITIALIZED
+[[01;36m10:04:17[0m][[01;35mSTATE[0m] INITIALIZED ---> BINDING
+[[01;36m10:04:17[0m][[01;35mSTATE[0m] BINDING ---> BOUND
+[[01;36m10:04:17[0m][[01;35mSTATE[0m] BOUND ---> CONNECTING
+[[01;36m10:04:17[0m][[01;35mSTATE[0m] CONNECTING ---> DEVICE READY
+[[01;36m10:04:17[0m][[01;35mSTATE[0m] DEVICE READY ---> INITIALIZING TASK
+[[01;36m10:04:17[0m][[01;32mINFO[0m] INIT HIT MERGER
+[[01;36m10:04:20[0m][[01;32mINFO[0m] Waiting for configuration answer 
+[[01;36m10:04:20[0m][[01;32mINFO[0m] Configuration answer received, containing 1032 bytes 
+[[01;36m10:04:20[0m][[01;32mINFO[0m] COMMUNICATED ENGINE TGeant3
+[[01;36m10:04:20[0m][[01;33mWARN[0m]  O2HitMerger: Some Detectors are potentially missing in this initialization 
+[[01;36m10:04:20[0m][[01;32mINFO[0m] OCCUPYING A SEGMENT IN A SHARED REGION
+[[01;36m10:04:20[0m][[01;32mINFO[0m] FOUND ID TO ATTACH -1
+[[01;36m10:04:20[0m][[01;32mINFO[0m] ASSIGNED PIPE HANDLE 18
+[[01;36m10:04:20[0m][[01;35mSTATE[0m] INITIALIZING TASK ---> READY
+[[01;36m10:04:20[0m][[01;35mSTATE[0m] READY ---> RUNNING
+[[01;36m10:04:20[0m][[01;32mINFO[0m] fair::mq::Device running...
+[[01;36m10:04:38[0m][[01;32mINFO[0m] SIMDATA channel got 5 parts for event 1 part 1 out of 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Event 1 complete. Marking as flushable
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Launching merge kernel 
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Merge and flush event 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] HitMerger processing took 0.00959921
+[[01;36m10:04:38[0m][[01;32mINFO[0m] SIMDATA channel got 5 parts for event 3 part 1 out of 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Event 3 complete. Marking as flushable
+[[01;36m10:04:38[0m][[01;32mINFO[0m] HitMerger processing took 0.000217915
+[[01;36m10:04:39[0m][[01;32mINFO[0m] SIMDATA channel got 5 parts for event 2 part 1 out of 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Event 2 complete. Marking as flushable
+[[01;36m10:04:39[0m][[01;32mINFO[0m] HitMerger processing took 0.0381238
+[[01;36m10:04:39[0m][[01;32mINFO[0m] SIMDATA channel got 5 parts for event 5 part 1 out of 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Event 5 complete. Marking as flushable
+[[01;36m10:04:39[0m][[01;32mINFO[0m] HitMerger processing took 0.101844
+HitMerger entry: 0 nprimry:     1 trackoffset:     1 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] SIMDATA channel got 5 parts for event 8 part 1 out of 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Event 8 complete. Marking as flushable
+[[01;36m10:04:39[0m][[01;32mINFO[0m] HitMerger processing took 0.000143051
+[[01;36m10:04:39[0m][[01;32mINFO[0m] SIMDATA channel got 5 parts for event 10 part 1 out of 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Event 10 complete. Marking as flushable
+[[01;36m10:04:39[0m][[01;32mINFO[0m] HitMerger processing took 0.00013113
+[[01;36m10:04:39[0m][[01;32mINFO[0m] SIMDATA channel got 5 parts for event 4 part 1 out of 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Event 4 complete. Marking as flushable
+[[01;36m10:04:39[0m][[01;32mINFO[0m] HitMerger processing took 0.000170946
+[[01;36m10:04:39[0m][[01;32mINFO[0m] SIMDATA channel got 5 parts for event 6 part 1 out of 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Event 6 complete. Marking as flushable
+[[01;36m10:04:39[0m][[01;32mINFO[0m] HitMerger processing took 0.000110865
+[[01;36m10:04:39[0m][[01;32mINFO[0m] SIMDATA channel got 5 parts for event 7 part 1 out of 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Event 7 complete. Marking as flushable
+[[01;36m10:04:39[0m][[01;32mINFO[0m] HitMerger processing took 0.000198841
+[[01;36m10:04:39[0m][[01;32mINFO[0m] SIMDATA channel got 5 parts for event 9 part 1 out of 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Event 9 complete. Marking as flushable
+[[01;36m10:04:39[0m][[01;32mINFO[0m] ALL EVENTS HERE; CHECKSUM 55
+[[01;36m10:04:39[0m][[01;32mINFO[0m] flushing tree to file o2sim_HitsMCH.root
+[[01;36m10:04:39[0m][[01;32mINFO[0m] outtree has file o2sim_Kine.root
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Merge/flush for event 1 took 0.148591
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Merge and flush event 2
+HitMerger entry: 0 nprimry:     1 trackoffset:     1 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] flushing tree to file o2sim_HitsMCH.root
+[[01;36m10:04:39[0m][[01;32mINFO[0m] outtree has file o2sim_Kine.root
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Merge/flush for event 2 took 0.000280857
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Merge and flush event 3
+HitMerger entry: 0 nprimry:     1 trackoffset:     1 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] flushing tree to file o2sim_HitsMCH.root
+[[01;36m10:04:39[0m][[01;32mINFO[0m] outtree has file o2sim_Kine.root
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Merge/flush for event 3 took 0.000222921
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Merge and flush event 4
+HitMerger entry: 0 nprimry:     1 trackoffset:     1 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] flushing tree to file o2sim_HitsMCH.root
+[[01;36m10:04:39[0m][[01;32mINFO[0m] outtree has file o2sim_Kine.root
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Merge/flush for event 4 took 0.000128031
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Merge and flush event 5
+HitMerger entry: 0 nprimry:     1 trackoffset:     1 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] flushing tree to file o2sim_HitsMCH.root
+[[01;36m10:04:39[0m][[01;32mINFO[0m] outtree has file o2sim_Kine.root
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Merge/flush for event 5 took 0.000166178
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Merge and flush event 6
+HitMerger entry: 0 nprimry:     1 trackoffset:     1 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] flushing tree to file o2sim_HitsMCH.root
+[[01;36m10:04:39[0m][[01;32mINFO[0m] outtree has file o2sim_Kine.root
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Merge/flush for event 6 took 0.000141859
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Merge and flush event 7
+HitMerger entry: 0 nprimry:     1 trackoffset:     1 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] flushing tree to file o2sim_HitsMCH.root
+[[01;36m10:04:39[0m][[01;32mINFO[0m] outtree has file o2sim_Kine.root
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Merge/flush for event 7 took 0.000128984
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Merge and flush event 8
+HitMerger entry: 0 nprimry:     1 trackoffset:     1 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] flushing tree to file o2sim_HitsMCH.root
+[[01;36m10:04:39[0m][[01;32mINFO[0m] outtree has file o2sim_Kine.root
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Merge/flush for event 8 took 0.000124931
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Merge and flush event 9
+HitMerger entry: 0 nprimry:     1 trackoffset:     1 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] flushing tree to file o2sim_HitsMCH.root
+[[01;36m10:04:39[0m][[01;32mINFO[0m] outtree has file o2sim_Kine.root
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Merge/flush for event 9 took 0.000121117
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Merge and flush event 10
+HitMerger entry: 0 nprimry:     1 trackoffset:     1 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] flushing tree to file o2sim_HitsMCH.root
+[[01;36m10:04:39[0m][[01;32mINFO[0m] outtree has file o2sim_Kine.root
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Merge/flush for event 10 took 0.000144005
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Writing TTrees
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Launching merge kernel 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] HitMerger processing took 0.177733
+[[01;36m10:04:39[0m][[01;35mSTATE[0m] RUNNING ---> READY
+[[01;36m10:04:39[0m][[01;35mSTATE[0m] READY ---> RESETTING TASK
+[[01;36m10:04:39[0m][[01;35mSTATE[0m] RESETTING TASK ---> DEVICE READY

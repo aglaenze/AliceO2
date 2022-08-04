@@ -42,7 +42,7 @@ class MisAligner : public TObject
 
   MisAligner();
 
-  ~MisAligner() final = default;
+  ~MisAligner() override = default;
 
   //_________________________________________________________________
   // methods

@@ -1,0 +1,390 @@
+cave:CAVE
+barrel:CAVE
+caveRB24:CAVE
+SCHL:MCH
+SNPB:MCH
+SKPT:MCH
+SCDB:MCH
+SBGP:MCH
+SBGC:MCH
+SDGH:MCH
+SA1G:MCH
+SA2G:MCH
+SA1C:MCH
+Spacer5A:MCH
+Spacer6:MCH
+Spacer7A:MCH
+SC01I:MCH
+SC01O:MCH
+Quadrant (chamber 1):MCH
+SQM1:MCH
+SQF1:MCH
+SQMF1:MCH
+SQN1:MCH
+SQ00:MCH
+SQ01:MCH
+SQ02:MCH
+SQ03:MCH
+SQ04toSQ06:MCH
+SQ05toSQ07:MCH
+SQ08:MCH
+SQ09:MCH
+SQ10:MCH
+SQ11:MCH
+SQ12:MCH
+SQ13:MCH
+SQ14:MCH
+SQ15:MCH
+SQ16:MCH
+SQ17to23:MCH
+SQ18to24:MCH
+SQ25:MCH
+SQ26:MCH
+SQ27:MCH
+SQ28:MCH
+SQ29:MCH
+SQ30:MCH
+SQ31:MCH
+SQ32:MCH
+SQ33:MCH
+SQ34to36:MCH
+SQ34to37:MCH
+SQ37:MCH
+SQ38:MCH
+SQ39:MCH
+SQ40:MCH
+SQ41:MCH
+SQ42:MCH
+SQ43:MCH
+SQ44:MCH
+SQ45:MCH
+SC02I:MCH
+SC02O:MCH
+Quadrant (chamber 2):MCH
+SQM2:MCH
+SQF2:MCH
+SQMF2:MCH
+SQN2:MCH
+Station 2 quadrant:MCH
+Segment 0:MCH
+Segment 0 gas:MCH
+Segment 0 cathode:MCH
+Segment 0 insulator:MCH
+Segment 0 rohacell:MCH
+Segment 0 MEB:MCH
+Segment 0 EERB:MCH
+Segment 1:MCH
+Segment 1 gas:MCH
+Segment 1 cathode:MCH
+Segment 1 insulator:MCH
+Segment 1 rohacell:MCH
+Segment 1 MEB:MCH
+Segment 1 EERB:MCH
+Segment 2:MCH
+Segment 2 gas:MCH
+Segment 2 cathode:MCH
+Segment 2 insulator:MCH
+Segment 2 rohacell:MCH
+Segment 2 MEB:MCH
+Segment 2 EERB:MCH
+Frame 1:MCH
+Epoxy 1:MCH
+Rib 1:MCH
+Frame 2:MCH
+Epoxy 2:MCH
+Rib 2:MCH
+Frame 4:MCH
+Epoxy 4:MCH
+Rib 4:MCH
+Frame 5:MCH
+Epoxy 5:MCH
+Rib 5:MCH
+Frame 6:MCH
+Epoxy 6:MCH
+Rib 6:MCH
+Frame 8:MCH
+Epoxy 8:MCH
+Rib 8:MCH
+Frame 3:MCH
+Epoxy 3:MCH
+Rib 3:MCH
+Frame 7:MCH
+Epoxy 7:MCH
+Rib 7:MCH
+SC03I:MCH
+SC03O:MCH
+SC04I:MCH
+SC04O:MCH
+Left spacer:MCH
+Top spacer 35.00 long:MCH
+Top border 35.00 long:MCH
+Top spacer 40.00 long:MCH
+Top border 40.00 long:MCH
+Top spacer 19.25 long:MCH
+Top border 19.25 long:MCH
+Top spacer 42.50 long:MCH
+Top border 42.50 long:MCH
+DualSampa345:MCH
+B1N1:MCH
+B1N1 gas:MCH
+B1:MCH
+N1:MCH
+B1N1 insulator:MCH
+B1N1 bottom spacer:MCH
+B1N1 bottom border:MCH
+B2N2+:MCH
+B2N2+ gas:MCH
+B2:MCH
+N2+:MCH
+B2N2+ insulator:MCH
+B2N2+ bottom spacer:MCH
+B2N2+ bottom border:MCH
+B2N2-:MCH
+B2N2- gas:MCH
+B2:MCH
+N2-:MCH
+B2N2- insulator:MCH
+B2N2- bottom spacer:MCH
+B2N2- bottom border:MCH
+B3+N3:MCH
+B3+N3 gas:MCH
+B3+:MCH
+N3:MCH
+B3+N3 insulator:MCH
+B3+N3 bottom spacer:MCH
+B3+N3 bottom border:MCH
+B3-N3:MCH
+B3-N3 gas:MCH
+B3-:MCH
+N3:MCH
+B3-N3 insulator:MCH
+B3-N3 bottom spacer:MCH
+B3-N3 bottom border:MCH
+R1:MCH
+R1 gas:MCH
+R1B:MCH
+R1N:MCH
+R1 insulator:MCH
+R1 bottom spacer:MCH
+R1 bottom border:MCH
+R2:MCH
+R2 gas:MCH
+R2B:MCH
+R2N:MCH
+R2 insulator:MCH
+R2 bottom spacer:MCH
+R2 bottom border:MCH
+R3:MCH
+R3 gas:MCH
+R3B:MCH
+R3N:MCH
+R3 insulator:MCH
+R3 bottom spacer:MCH
+R3 bottom border:MCH
+S2+:MCH
+S2+ gas:MCH
+S2B+:MCH
+S2N+:MCH
+S2+ insulator:MCH
+S2+ bottom spacer:MCH
+S2+ bottom border:MCH
+S2-:MCH
+S2- gas:MCH
+S2B-:MCH
+S2N-:MCH
+S2- insulator:MCH
+S2- bottom spacer:MCH
+S2- bottom border:MCH
+Chamber 5 support panel:MCH
+NomexSupportPanelCh5:MCH
+GlueSupportPanelCh5:MCH
+CarbonSupportPanelCh5:MCH
+Chamber 6 support panel:MCH
+NomexSupportPanelCh6:MCH
+GlueSupportPanelCh6:MCH
+CarbonSupportPanelCh6:MCH
+Chamber 7 support panel:MCH
+NomexSupportPanelCh7:MCH
+GlueSupportPanelCh7:MCH
+CarbonSupportPanelCh7:MCH
+Chamber 8 support panel:MCH
+NomexSupportPanelCh8:MCH
+GlueSupportPanelCh8:MCH
+CarbonSupportPanelCh8:MCH
+Chamber 9 support panel:MCH
+NomexSupportPanelCh9:MCH
+GlueSupportPanelCh9:MCH
+CarbonSupportPanelCh9:MCH
+Chamber 10 support panel:MCH
+NomexSupportPanelCh10:MCH
+GlueSupportPanelCh10:MCH
+CarbonSupportPanelCh10:MCH
+112200NR2:MCH
+112200NR2 right spacer:MCH
+112200NR2 panel:MCH
+112200NR2 panel glue:MCH
+112200NR2 panel nomex (bulk):MCH
+112200NR2 panel carbon fiber:MCH
+112200NR2 panel nomex (honeycomb):MCH
+112200NR2 rounded spacer:MCH
+112200NR2 LV cable:MCH
+112200SR2:MCH
+112200SR2 right spacer:MCH
+112200SR2 panel:MCH
+112200SR2 panel glue:MCH
+112200SR2 panel nomex (bulk):MCH
+112200SR2 panel carbon fiber:MCH
+112200SR2 panel nomex (honeycomb):MCH
+112200SR2 rounded spacer:MCH
+112200SR2 LV cable:MCH
+112230N:MCH
+112230N right spacer:MCH
+112230N panel:MCH
+112230N panel glue:MCH
+112230N panel nomex (bulk):MCH
+112230N panel carbon fiber:MCH
+112230N panel nomex (honeycomb):MCH
+112230N LV cable:MCH
+112233N:MCH
+112233N right spacer:MCH
+112233N panel:MCH
+112233N panel glue:MCH
+112233N panel nomex (bulk):MCH
+112233N panel carbon fiber:MCH
+112233N panel nomex (honeycomb):MCH
+112233N LV cable:MCH
+112233NR3:MCH
+112233NR3 right spacer:MCH
+112233NR3 panel:MCH
+112233NR3 panel glue:MCH
+112233NR3 panel nomex (bulk):MCH
+112233NR3 panel carbon fiber:MCH
+112233NR3 panel nomex (honeycomb):MCH
+112233NR3 rounded spacer:MCH
+112233NR3 LV cable:MCH
+122000NR1:MCH
+122000NR1 right spacer:MCH
+122000NR1 panel:MCH
+122000NR1 panel glue:MCH
+122000NR1 panel nomex (bulk):MCH
+122000NR1 panel carbon fiber:MCH
+122000NR1 panel nomex (honeycomb):MCH
+122000NR1 rounded spacer:MCH
+122000NR1 LV cable:MCH
+122000SR1:MCH
+122000SR1 right spacer:MCH
+122000SR1 panel:MCH
+122000SR1 panel glue:MCH
+122000SR1 panel nomex (bulk):MCH
+122000SR1 panel carbon fiber:MCH
+122000SR1 panel nomex (honeycomb):MCH
+122000SR1 rounded spacer:MCH
+122000SR1 LV cable:MCH
+122200N:MCH
+122200N right spacer:MCH
+122200N panel:MCH
+122200N panel glue:MCH
+122200N panel nomex (bulk):MCH
+122200N panel carbon fiber:MCH
+122200N panel nomex (honeycomb):MCH
+122200N LV cable:MCH
+122200S:MCH
+122200S right spacer:MCH
+122200S panel:MCH
+122200S panel glue:MCH
+122200S panel nomex (bulk):MCH
+122200S panel carbon fiber:MCH
+122200S panel nomex (honeycomb):MCH
+122200S LV cable:MCH
+122330N:MCH
+122330N right spacer:MCH
+122330N panel:MCH
+122330N panel glue:MCH
+122330N panel nomex (bulk):MCH
+122330N panel carbon fiber:MCH
+122330N panel nomex (honeycomb):MCH
+122330N LV cable:MCH
+220000N:MCH
+220000N right spacer:MCH
+220000N panel:MCH
+220000N panel glue:MCH
+220000N panel nomex (bulk):MCH
+220000N panel carbon fiber:MCH
+220000N panel nomex (honeycomb):MCH
+220000N LV cable:MCH
+222000N:MCH
+222000N right spacer:MCH
+222000N panel:MCH
+222000N panel glue:MCH
+222000N panel nomex (bulk):MCH
+222000N panel carbon fiber:MCH
+222000N panel nomex (honeycomb):MCH
+222000N LV cable:MCH
+222330N:MCH
+222330N right spacer:MCH
+222330N panel:MCH
+222330N panel glue:MCH
+222330N panel nomex (bulk):MCH
+222330N panel carbon fiber:MCH
+222330N panel nomex (honeycomb):MCH
+222330N LV cable:MCH
+222333N:MCH
+222333N right spacer:MCH
+222333N panel:MCH
+222333N panel glue:MCH
+222333N panel nomex (bulk):MCH
+222333N panel carbon fiber:MCH
+222333N panel nomex (honeycomb):MCH
+222333N LV cable:MCH
+223300N:MCH
+223300N right spacer:MCH
+223300N panel:MCH
+223300N panel glue:MCH
+223300N panel nomex (bulk):MCH
+223300N panel carbon fiber:MCH
+223300N panel nomex (honeycomb):MCH
+223300N LV cable:MCH
+223330N:MCH
+223330N right spacer:MCH
+223330N panel:MCH
+223330N panel glue:MCH
+223330N panel nomex (bulk):MCH
+223330N panel carbon fiber:MCH
+223330N panel nomex (honeycomb):MCH
+223330N LV cable:MCH
+330000N:MCH
+330000N right spacer:MCH
+330000N panel:MCH
+330000N panel glue:MCH
+330000N panel nomex (bulk):MCH
+330000N panel carbon fiber:MCH
+330000N panel nomex (honeycomb):MCH
+330000N LV cable:MCH
+333000N:MCH
+333000N right spacer:MCH
+333000N panel:MCH
+333000N panel glue:MCH
+333000N panel nomex (bulk):MCH
+333000N panel carbon fiber:MCH
+333000N panel nomex (honeycomb):MCH
+333000N LV cable:MCH
+333300N:MCH
+333300N right spacer:MCH
+333300N panel:MCH
+333300N panel glue:MCH
+333300N panel nomex (bulk):MCH
+333300N panel carbon fiber:MCH
+333300N panel nomex (honeycomb):MCH
+333300N LV cable:MCH
+SC05I:MCH
+SC05O:MCH
+SC06I:MCH
+SC06O:MCH
+SC07I:MCH
+SC07O:MCH
+SC08I:MCH
+SC08O:MCH
+SC09I:MCH
+SC09O:MCH
+SC10I:MCH
+SC10O:MCH

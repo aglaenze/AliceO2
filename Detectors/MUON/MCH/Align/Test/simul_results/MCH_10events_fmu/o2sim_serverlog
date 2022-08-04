@@ -1,0 +1,312 @@
+o2-sim-primary-server-device-runner
+--control
+static
+--id
+primary-server
+--mq-config
+o2simtopology_74684.json
+--severity
+debug
+-m
+MCH
+-n
+10
+-g
+fwmugen
+$$$$
+[[01;36m10:04:17[0m][[01;32mINFO[0m] 
+      ______      _    _______  _________ 
+     / ____/___ _(_)_______   |/  /_  __ \    version 1.4.50
+    / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+   / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+  /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2022 GSI
+
+[[01;36m10:04:17[0m][[01;35mSTATE[0m] Starting FairMQ state machine --> IDLE
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] PID: 74686
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Loaded plugin: 'config', version '1.4.50', maintainer 'FairRootGroup <fairroot@gsi.de>', homepage 'https://github.com/FairRootGroup/FairMQ'
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Loaded plugin: 'control', version '1.4.50', maintainer 'FairRootGroup <fairroot@gsi.de>', homepage 'https://github.com/FairRootGroup/FairMQ'
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Running builtin controller: static
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Plugin 'control' is setting up signal handling for SIGINT and SIGTERM
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Configuration: 
+CCDBUrl                       = http://alice-ccdb.cern.ch <string>         [default] 
+asservice                     = false                     <bool>           [default] 
+bMax                          = 0                         <float>          [default] 
+bad-alloc-attempt-interval    = 50                        <int>            [default] 
+catch-signals                 = 1                         <int>            [default] 
+chunkSize                     = 500                       <unsigned>       [default] 
+chunkSizeI                    = -1                        <int>            [default] 
+color                         = true                      <bool>           [default] 
+configFile                    =                           <string>         [default] 
+configKeyValues               =                           <string>         [default] 
+control                       = static                    <string>         [provided]
+embedIntoFile                 =                           <string>         [default] 
+extKinFile                    = Kinematics.root           <string>         [default] 
+field                         = -5                        <string>         [default] 
+file-severity                 = debug                     <string>         [default] 
+generator                     = fwmugen                   <string>         [provided]
+id                            = primary-server            <string>         [provided]
+init-timeout                  = 120                       <int>            [default] 
+io-threads                    = 1                         <int>            [default] 
+isMT                          = false                     <bool>           [default] 
+log-to-file                   =                           <string>         [default] 
+logseverity                   = INFO                      <string>         [default] 
+logverbosity                  = medium                    <string>         [default] 
+mcEngine                      = TGeant3                   <string>         [default] 
+modules                       = MCH                       <vector<string>> [provided]
+mq-config                     = o2simtopology_74684.json  <string>         [provided]
+nEvents                       = 10                        <unsigned>       [provided]
+network-interface             = default                   <string>         [default] 
+noGeant                       = false                     <bool>           [default] 
+nworkers                      = 2                         <int>            [default] 
+ofi-size-hint                 = 0                         <unsigned long>  [default] 
+outPrefix                     = o2sim                     <string>         [default] 
+rate                          = 0                         <float>          [default] 
+readoutDetectors              =                           <vector<string>> [default] 
+seed                          = -1                        <int>            [default] 
+session                       = default                   <string>         [default] 
+severity                      = debug                     <string>         [provided]
+shm-allocation                = rbtree_best_fit           <string>         [default] 
+shm-mlock-segment             = false                     <bool>           [default] 
+shm-mlock-segment-on-creation = false                     <bool>           [default] 
+shm-monitor                   = true                      <bool>           [default] 
+shm-no-cleanup                = false                     <bool>           [default] 
+shm-segment-id                = 0                         <unsigned short> [default] 
+shm-segment-size              = 2147483648                <unsigned long>  [default] 
+shm-throw-bad-alloc           = true                      <bool>           [default] 
+shm-zero-segment              = false                     <bool>           [default] 
+shm-zero-segment-on-creation  = false                     <bool>           [default] 
+skipModules                   =                           <vector<string>> [default] 
+skipReadoutDetectors          =                           <vector<string>> [default] 
+startEvent                    = 0                         <unsigned>       [default] 
+transport                     = zeromq                    <string>         [default] 
+trigger                       =                           <string>         [default] 
+verbosity                     = medium                    <string>         [default] 
+
+[[01;36m10:04:17[0m][[01;35mSTATE[0m] IDLE ---> INITIALIZING DEVICE
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] mq-config: Using default JSON parser
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Parsing JSON from o2simtopology_74684.json ...
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Setting 'zeromq' as default transport for the device
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Adding 'zeromq' transport
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Transport: Using ZeroMQ library, version: 4.3.3
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Initializing transport for channel o2sim-primserv-info[0]: default
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Reusing existing 'zeromq' transport
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Initializing transport for channel primary-get[0]: default
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Reusing existing 'zeromq' transport
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Initializing transport for channel primary-notifications[0]: default
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Reusing existing 'zeromq' transport
+[[01;36m10:04:17[0m][[01;35mSTATE[0m] INITIALIZING DEVICE ---> INITIALIZED
+[[01;36m10:04:17[0m][[01;35mSTATE[0m] INITIALIZED ---> BINDING
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Validating channel 'o2sim-primserv-info[0]'... VALID
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Created socket primary-server.o2sim-primserv-info[0].rep
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Attached channel o2sim-primserv-info[0] to ipc:///tmp/o2sim-primserv-info-74684 (bind) (rep)
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Validating channel 'primary-get[0]'... VALID
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Created socket primary-server.primary-get[0].rep
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Attached channel primary-get[0] to ipc:///tmp/o2sim-primary-get-74684 (bind) (rep)
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Validating channel 'primary-notifications[0]'... VALID
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Created socket primary-server.primary-notifications[0].pub
+[[01;36m10:04:17[0m][[01;34mDEBUG[0m] Attached channel primary-notifications[0] to ipc:///tmp/o2sim-primary-notifications-74684 (bind) (pub)
+[[01;36m10:04:17[0m][[01;35mSTATE[0m] BINDING ---> BOUND
+[[01;36m10:04:17[0m][[01;35mSTATE[0m] BOUND ---> CONNECTING
+[[01;36m10:04:17[0m][[01;35mSTATE[0m] CONNECTING ---> DEVICE READY
+[[01;36m10:04:17[0m][[01;35mSTATE[0m] DEVICE READY ---> INITIALIZING TASK
+[[01;36m10:04:17[0m][[01;32mINFO[0m] INITTASK CHANGING STATE TO INIT
+[[01;36m10:04:17[0m][[01;32mINFO[0m] Init Server device 
+[[01;36m10:04:18[0m][[01;32mINFO[0m] Stack.storeSecondaries : true		[ CODE ]
+Stack.pruneKine : true		[ CODE ]
+Stack.transportPrimary : all		[ CODE ]
+Stack.transportPrimaryFileName : 		[ CODE ]
+Stack.transportPrimaryFuncName : 		[ CODE ]
+Stack.transportPrimaryInvert : false		[ CODE ]
+
+[[01;36m10:04:18[0m][[01;32mINFO[0m] ENGINE SET TO TGeant3
+[[01;36m10:04:18[0m][[01;32mINFO[0m] CHUNK SIZE SET TO 500
+[[01;36m10:04:18[0m][[01;32mINFO[0m] RNG INITIAL SEED 510169389
+[[01;36m10:04:20[0m][[01;32mINFO[0m] LAUNCHING STATUS THREAD
+[[01;36m10:04:20[0m][[01;32mINFO[0m] INFO REQUEST RECEIVED
+[[01;36m10:04:20[0m][[01;32mINFO[0m] Received config request
+[[01;36m10:04:20[0m][[01;32mINFO[0m] config reply send 
+[[01;36m10:04:20[0m][[01;32mINFO[0m] INFO REQUEST RECEIVED
+[[01;36m10:04:20[0m][[01;32mINFO[0m] Received config request
+[[01;36m10:04:20[0m][[01;32mINFO[0m] config reply send 
+[[01;36m10:04:20[0m][[01;34mDEBUG[0m] On macOS we simply rely on TGrid::Connect("alien").
+[[01;36m10:04:20[0m][[01;32mINFO[0m] Is alien token present?: 1
+[[01;36m10:04:20[0m][[01;34mDEBUG[0m] On macOS we simply rely on TGrid::Connect("alien").
+[[01;36m10:04:20[0m][[01;32mINFO[0m] Is alien token present?: 1
+[[01;36m10:04:20[0m][[01;32mINFO[0m] MagneticField::CreateField: Maximim possible beam energy for requested beam is assumed
+[[01;36m10:04:20[0m][[01;32mINFO[0m] MagneticField::Print: Maps:
+[[01;36m10:04:20[0m][[01;32mINFO[0m] MagneticField::Print: Solenoid (-1*)5 kG, Dipole ON (-1) 
+[[01;36m10:04:20[0m][[01;32mINFO[0m] MagneticField::Print: Machine B fields for p-p  beam (7000 GeV): QGrad: 22.0002 Dipole: 37.8781
+[[01;36m10:04:20[0m][[01;32mINFO[0m] MagneticField::Print: Uses Sol30_Dip6_Hole  of $(O2_ROOT)/share/Common/maps/mfchebKGI_sym.root
+Info in <TGeoGlobalMagField::SetField>: Global magnetic field set to <Maps>
+Info in <TGeoGlobalMagField::Lock>: Global magnetic field <Maps> is now locked
+[[01;36m10:04:20[0m][[01;32mINFO[0m] Init box forward muons generator
+[[01;36m10:04:20[0m][[01;32mINFO[0m] Initialising primary generator
+[[01;36m10:04:20[0m][[01;32mINFO[0m] Setting interaction diamond: position = {0,0,0} cm
+[[01;36m10:04:20[0m][[01;32mINFO[0m] Setting interaction diamond: width = {0,0,0} cm
+[[01;36m10:04:20[0m][[01;32mINFO[0m] FairBoxGenerator: particle with PDG =13 Found
+[[01;36m10:04:20[0m][[01;32mINFO[0m] Generator initialization took 0.22s
+[[01;36m10:04:20[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m10:04:20[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m10:04:20[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-1.29, -1.37, -49.96) GeV,
+[[01;36m10:04:20[0m][[01;34mDEBUG[0m] (Event 1) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m10:04:20[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m10:04:20[0m][[01;32mINFO[0m] ASSIGNED PIPE HANDLE 17
+[[01;36m10:04:20[0m][[01;32mINFO[0m] INITTASK CHANGING STATE TO SERVING
+[[01;36m10:04:20[0m][[01;35mSTATE[0m] INITIALIZING TASK ---> READY
+[[01;36m10:04:20[0m][[01;35mSTATE[0m] READY ---> RUNNING
+[[01;36m10:04:20[0m][[01;32mINFO[0m] fair::mq::Device running...
+[[01;36m10:04:38[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:0
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Received request for work 0 10 1 available 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m10:04:38[0m][[01;32mINFO[0m] treating ev 1 part 1 out of 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m10:04:38[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m10:04:38[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(0.33, -3.85, -49.85) GeV,
+[[01;36m10:04:38[0m][[01;34mDEBUG[0m] (Event 2) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m10:04:38[0m][[01;32mINFO[0m] COND-RUN TOOK 0.01 s
+[[01;36m10:04:38[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:0
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Received request for work 1 10 1 available 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m10:04:38[0m][[01;32mINFO[0m] treating ev 2 part 1 out of 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m10:04:38[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m10:04:38[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-2.24, 3.82, -49.80) GeV,
+[[01;36m10:04:38[0m][[01;34mDEBUG[0m] (Event 3) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m10:04:38[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m10:04:38[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Received request for work 2 10 1 available 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m10:04:38[0m][[01;32mINFO[0m] treating ev 3 part 1 out of 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m10:04:38[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m10:04:38[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-0.42, 2.44, -49.94) GeV,
+[[01;36m10:04:38[0m][[01;34mDEBUG[0m] (Event 4) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m10:04:38[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m10:04:38[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:2
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Received request for work 3 10 1 available 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m10:04:38[0m][[01;32mINFO[0m] treating ev 4 part 1 out of 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m10:04:38[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m10:04:38[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-2.18, 4.78, -49.72) GeV,
+[[01;36m10:04:38[0m][[01;34mDEBUG[0m] (Event 5) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m10:04:38[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m10:04:38[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Received request for work 4 10 1 available 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m10:04:38[0m][[01;32mINFO[0m] treating ev 5 part 1 out of 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m10:04:38[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m10:04:38[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-1.71, -2.71, -49.90) GeV,
+[[01;36m10:04:38[0m][[01;34mDEBUG[0m] (Event 6) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m10:04:38[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m10:04:38[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:3
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Received request for work 5 10 1 available 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m10:04:38[0m][[01;32mINFO[0m] treating ev 6 part 1 out of 1
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m10:04:38[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m10:04:38[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-4.72, 3.81, -49.63) GeV,
+[[01;36m10:04:38[0m][[01;34mDEBUG[0m] (Event 7) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m10:04:38[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m10:04:38[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m10:04:39[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:4
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Received request for work 6 10 1 available 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m10:04:39[0m][[01;32mINFO[0m] treating ev 7 part 1 out of 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m10:04:39[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-2.27, 6.19, -49.56) GeV,
+[[01;36m10:04:39[0m][[01;34mDEBUG[0m] (Event 8) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m10:04:39[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m10:04:39[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:2
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Received request for work 7 10 1 available 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m10:04:39[0m][[01;32mINFO[0m] treating ev 8 part 1 out of 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m10:04:39[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(3.61, -1.29, -49.85) GeV,
+[[01;36m10:04:39[0m][[01;34mDEBUG[0m] (Event 9) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m10:04:39[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m10:04:39[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:5
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Received request for work 8 10 1 available 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m10:04:39[0m][[01;32mINFO[0m] treating ev 9 part 1 out of 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m10:04:39[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(0.80, -3.87, -49.84) GeV,
+[[01;36m10:04:39[0m][[01;34mDEBUG[0m] (Event 10) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m10:04:39[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m10:04:39[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 0:3
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Received request for work 9 10 1 available 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] indices -499 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Sending 1 particles
+[[01;36m10:04:39[0m][[01;32mINFO[0m] treating ev 10 part 1 out of 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Event generation started 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] FairBoxGenerator: Event,  vertex = (0,0,0) cm,  multiplicity 1
+[[01;36m10:04:39[0m][[01;34mDEBUG[0m] FairBoxGen:  PDG 13 p=(-0.26, 1.86, -49.96) GeV,
+[[01;36m10:04:39[0m][[01;34mDEBUG[0m] (Event 11) 1 primary tracks from vertex (0, 0, 0) with beam angle (0, 0) 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Event generation took 0s and produced 1 primaries 
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m10:04:39[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m10:04:39[0m][[01;32mINFO[0m] PARTICLE REQUEST IN STATE SERVING from 1:6
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Received request for work 10 10 1 available 0
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Have 1 1
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Reply send in 0s
+[[01;36m10:04:39[0m][[01;32mINFO[0m] CONDRUN CHANGING STATE TO STOPPED
+[[01;36m10:04:39[0m][[01;32mINFO[0m] COND-RUN TOOK 0 s
+[[01;36m10:04:39[0m][[01;32mINFO[0m] Waiting info thread
+[[01;36m10:04:39[0m][[01;35mSTATE[0m] RUNNING ---> READY
+[[01;36m10:04:39[0m][[01;35mSTATE[0m] READY ---> RESETTING TASK
+[[01;36m10:04:39[0m][[01;35mSTATE[0m] RESETTING TASK ---> DEVICE READY
+[[01;36m10:04:39[0m][[01;35mSTATE[0m] No transition from state DEVICE_READY on transition AUTO
+[[01;36m10:04:39[0m][[01;35mSTATE[0m] DEVICE READY ---> RESETTING DEVICE
+[[01;36m10:04:39[0m][[01;34mDEBUG[0m] Destroying ZeroMQ transport...
+[[01;36m10:04:39[0m][[01;35mSTATE[0m] RESETTING DEVICE ---> IDLE
+[[01;36m10:04:39[0m][[01;35mSTATE[0m] IDLE ---> EXITING
+[[01;36m10:04:39[0m][[01;34mDEBUG[0m] Shutting down Plugin Manager
+[[01;36m10:04:39[0m][[01;34mDEBUG[0m] Unloaded plugin: 'control', version '1.4.50', maintainer 'FairRootGroup <fairroot@gsi.de>', homepage 'https://github.com/FairRootGroup/FairMQ'
+[[01;36m10:04:39[0m][[01;34mDEBUG[0m] Unloaded plugin: 'config', version '1.4.50', maintainer 'FairRootGroup <fairroot@gsi.de>', homepage 'https://github.com/FairRootGroup/FairMQ'
+[[01;36m10:04:39[0m][[01;34mDEBUG[0m] Shutting down Plugin Services
+[[01;36m10:04:39[0m][[01;34mDEBUG[0m] Shutting down device primary-server
+[[01;36m10:04:39[0m][[01;35mSTATE[0m] Exiting FairMQ state machine
+[[01;36m10:04:39[0m][[01;34mDEBUG[0m] removed RTDB container factory PassiveContFact
+[[01;36m10:04:39[0m][[01;34mDEBUG[0m] removed RTDB container factory ContainerFactory
+[[01;36m10:04:39[0m][[01;34mDEBUG[0m] removed RTDB container factory MagFieldContFact
+[[01;36m10:04:39[0m][[01;34mDEBUG[0m] removed RTDB container factory FairBaseContFact

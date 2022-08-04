@@ -1,0 +1,377 @@
+[INFO] BINDING TO ADDRESS ipc:///tmp/o2sim-worker-notifications-1744 type pub
+[INFO] Parsed primary server address ipc:///tmp/o2sim-primary-get-1744
+[INFO] Parsed primary server status address ipc:///tmp/o2sim-primserv-info-1744
+[INFO] Parsed merger address ipc:///tmp/o2sim-hitmerger-simdata-1744
+[INFO] Waiting for configuration answer 
+[INFO] Configuration answer received, containing 1032 bytes 
+[INFO] COMMUNICATED ENGINE TGeant3
+[14:36:12][INFO] Setting up the simulation ...
+[14:36:12][INFO] Init CcdApi with UserAgentID: dphnmct7-1652790972-qmWqBl, Host: http://alice-ccdb.cern.ch/, alien-token: true
+[14:36:12][INFO] Init CcdApi with UserAgentID: dphnmct7-1652790972-qmWqBl, Host: http://alice-ccdb.cern.ch, alien-token: true
+[14:36:12][INFO] Initialized CCDB Manager at URL: http://alice-ccdb.cern.ch
+[14:36:12][INFO] Initialized CCDB Manager with timestamp : 1652790969786
+[14:36:12][INFO] RNG INITIAL SEED 3553329314
+[14:36:28][WARN] FairRun::SetOutputFile() deprecated. Use FairRootFileSink.
+Warning in <TGeoManager>: Changing system of units to ROOT units (cm, s, GeV).
+[14:36:28][INFO] Media file used: /Users/cz263673/alice/sw/osx_x86-64/O2/dev-local1/share/Detectors/Geometry/media.geo
+[14:36:28][INFO] MagneticField::CreateField: Maximim possible beam energy for requested beam is assumed
+[14:36:28][INFO] MagneticField::Print: Maps:
+[14:36:28][INFO] MagneticField::Print: Solenoid (-1*)5 kG, Dipole ON (-1) 
+[14:36:28][INFO] MagneticField::Print: Machine B fields for p-p  beam (7000 GeV): QGrad: 22.0002 Dipole: 37.8781
+[14:36:28][INFO] MagneticField::Print: Uses Sol30_Dip6_Hole  of $(O2_ROOT)/share/Common/maps/mfchebKGI_sym.root
+[14:36:28][INFO] Activating MCH module
+[14:36:28][INFO] Reading out MCH detector
+[14:36:28][INFO] Reading out MCH detector
+[14:36:28][INFO] O2RUNSIM SPECIFIC INIT CALLED
+[14:36:28][INFO] FairRootFileSink initialized.
+[14:36:28][INFO]  - cbmroot_0
+[14:36:28][INFO]     - o2sim_1746.root
+Info in <TGeoManager::TGeoManager>: Geometry FAIRGeom, FAIR geometry created
+[14:36:28][INFO] FairGeoMedia: Read media 
+[14:36:29][INFO] MagFieldContFact::createContainer: Creating mag.field container MagFieldParam
+[14:36:29][INFO] Loading simulation plugin libO2G3Setup
+[14:36:29][INFO] Setting up G3 sim from library code
+
+=============================================================
+ Virtual Monte Carlo Library
+ Version 2.0 ( 10 February 2022 )
+=============================================================
+
+=============================================================
+ Geant3 Virtual Monte Carlo 
+ Version 4.1 ( 17 March 2022 )
+ WWW : https://vmc-project.github.io/
+=============================================================
+
+-I- G3Config: Geant3 with TGeo has been created.
+[14:36:29][INFO] Stack.storeSecondaries : true		[ CODE ]
+Stack.pruneKine : true		[ CODE ]
+Stack.transportPrimary : all		[ CODE ]
+Stack.transportPrimaryFileName : 		[ CODE ]
+Stack.transportPrimaryFuncName : 		[ CODE ]
+Stack.transportPrimaryInvert : false		[ CODE ]
+
+
+ *------------------------------------------------------------------------------------* 
+ |                                                                                    | 
+ |  *------------------------------------------------------------------------------*  | 
+ |  |                                                                              |  | 
+ |  |                                                                              |  | 
+ |  |   PPP   Y   Y  TTTTT  H   H  III    A      Welcome to the Lund Monte Carlo!  |  | 
+ |  |   P  P   Y Y     T    H   H   I    A A     This is PYTHIA version 8.304      |  | 
+ |  |   PPP     Y      T    HHHHH   I   AAAAA    Last date of change:  9 Apr 2021  |  | 
+ |  |   P       Y      T    H   H   I   A   A                                      |  | 
+ |  |   P       Y      T    H   H  III  A   A    Now is 17 May 2022 at 14:36:30    |  | 
+ |  |                                                                              |  | 
+ |  |   Christian Bierlich;  Department of Astronomy and Theoretical Physics,      |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: christian.bierlich@thep.lu.se                                   |  | 
+ |  |   Nishita Desai;  Department of Theoretical Physics, Tata Institute,         |  | 
+ |  |      Homi Bhabha Road, Mumbai 400005, India;                                 |  | 
+ |  |      e-mail: desai@theory.tifr.res.in                                        |  | 
+ |  |   Leif Gellersen;  Department of Astronomy and Theoretical Physics,          |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: leif.gellersen@thep.lu.se                                       |  | 
+ |  |   Ilkka Helenius;  Department of Physics, University of Jyvaskyla,           |  | 
+ |  |      P.O. Box 35, FI-40014 University of Jyvaskyla, Finland;                 |  | 
+ |  |      e-mail: ilkka.m.helenius@jyu.fi                                         |  | 
+ |  |   Philip Ilten;  Department of Physics,                                      |  | 
+ |  |      University of Cincinnati, Cincinnati, OH 45221, USA;                    |  | 
+ |  |      e-mail: philten@cern.ch                                                 |  | 
+ |  |   Leif Lonnblad;  Department of Astronomy and Theoretical Physics,           |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: leif.lonnblad@thep.lu.se                                        |  | 
+ |  |   Stephen Mrenna;  Computing Division, Simulations Group,                    |  | 
+ |  |      Fermi National Accelerator Laboratory, MS 234, Batavia, IL 60510, USA;  |  | 
+ |  |      e-mail: mrenna@fnal.gov                                                 |  | 
+ |  |   Stefan Prestel;  Department of Astronomy and Theoretical Physics,          |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: stefan.prestel@thep.lu.se                                       |  | 
+ |  |   Christian Preuss;  School of Physics and Astronomy,                        |  | 
+ |  |      Monash University, PO Box 27, 3800 Melbourne, Australia;                |  | 
+ |  |      e-mail: christian.preuss@monash.edu                                     |  | 
+ |  |   Torbjorn Sjostrand;  Department of Astronomy and Theoretical Physics,      |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: torbjorn@thep.lu.se                                             |  | 
+ |  |   Peter Skands;  School of Physics and Astronomy,                            |  | 
+ |  |      Monash University, PO Box 27, 3800 Melbourne, Australia;                |  | 
+ |  |      e-mail: peter.skands@monash.edu                                         |  | 
+ |  |   Marius Utheim;  Department of Astronomy and Theoretical Physics,           |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: marius.utheim@thep.lu.se                                        |  | 
+ |  |   Rob Verheyen;  Department of Physics and Astronomy,                        |  | 
+ |  |      University College London, Gower St, Bloomsbury, London WC1E 6BT, UK;   |  | 
+ |  |      e-mail: r.verheyen@ucl.ac.uk                                            |  | 
+ |  |                                                                              |  | 
+ |  |   The main program reference is 'An Introduction to PYTHIA 8.2',             |  | 
+ |  |   T. Sjostrand et al, Comput. Phys. Commun. 191 (2015) 159                   |  | 
+ |  |   [arXiv:1410.3012 [hep-ph]]                                                 |  | 
+ |  |                                                                              |  | 
+ |  |   The main physics reference is the 'PYTHIA 6.4 Physics and Manual',         |  | 
+ |  |   T. Sjostrand, S. Mrenna and P. Skands, JHEP05 (2006) 026 [hep-ph/0603175]  |  | 
+ |  |                                                                              |  | 
+ |  |   An archive of program versions and documentation is found on the web:      |  | 
+ |  |   http://www.thep.lu.se/Pythia                                               |  | 
+ |  |                                                                              |  | 
+ |  |   This program is released under the GNU General Public Licence version 2.   |  | 
+ |  |   Please respect the MCnet Guidelines for Event Generator Authors and Users. |  | 
+ |  |                                                                              |  | 
+ |  |   Disclaimer: this program comes without any guarantees.                     |  | 
+ |  |   Beware of errors and use common sense when interpreting results.           |  | 
+ |  |                                                                              |  | 
+ |  |   Copyright (C) 2021 Torbjorn Sjostrand                                      |  | 
+ |  |                                                                              |  | 
+ |  |                                                                              |  | 
+ |  *------------------------------------------------------------------------------*  | 
+ |                                                                                    | 
+ *------------------------------------------------------------------------------------* 
+
+[14:36:30][INFO] Init 'DecayerPythia8' with following parameters
+[14:36:30][INFO] DecayerPythia8.config[0] : ${O2_ROOT}/share/Generators/pythia8/decays/base.cfg		[ CODE ]
+DecayerPythia8.config[1] : 		[ CODE ]
+DecayerPythia8.config[2] : 		[ CODE ]
+DecayerPythia8.config[3] : 		[ CODE ]
+DecayerPythia8.config[4] : 		[ CODE ]
+DecayerPythia8.config[5] : 		[ CODE ]
+DecayerPythia8.config[6] : 		[ CODE ]
+DecayerPythia8.config[7] : 		[ CODE ]
+DecayerPythia8.verbose : false		[ CODE ]
+DecayerPythia8.showChanged : false		[ CODE ]
+
+[14:36:30][INFO] Reading configuration from file: /Users/cz263673/alice/sw/osx_x86-64/O2/dev-local1/share/Generators/pythia8/decays/base.cfg
+
+ *-------  PYTHIA Flag + Mode + Parm + Word + FVec + MVec + PVec + WVec Settings (changes only)  ------------------* 
+ |                                                                                                                 | 
+ | Name                                          |                      Now |      Default         Min         Max | 
+ |                                               |                          |                                      | 
+ | Init:showChangedParticleData                  |                      off |           on                         | 
+ | ProcessLevel:all                              |                      off |           on                         | 
+ |                                                                                                                 | 
+ *-------  End PYTHIA Flag + Mode + Parm + Word + FVec + MVec + PVec + WVec Settings  -----------------------------* 
+[14:36:30][INFO] Setup global cuts and processes
+[14:36:30][INFO] Set default settings for processes and cuts.
+[14:36:30][INFO] Special process settings are enabled.
+[14:36:30][INFO] Special cut settings are enabled.
+[14:36:30][INFO] Printing 'SimUserDecay' parameters
+[14:36:30][INFO] SimUserDecay.pdglist : 		[ CODE ]
+
+[14:36:30][INFO] Initialising primary generator
+[14:36:30][INFO] Setting interaction diamond: position = {0,0,0} cm
+[14:36:30][INFO] Setting interaction diamond: width = {0,0,0} cm
+[14:36:30][INFO] Field in CAVE: 2
+[14:36:30][INFO] Setting up CAVE without ZDC
+Info in <TGeoManager::SetTopVolume>: Top volume is cave. Master volume is cave
+Info in <TGeoNavigator::BuildCache>: --- Maximum geometry depth set to 100
+Info in <TGeoManager::CheckGeometry>: Fixing runtime shapes...
+Info in <TGeoManager::CheckGeometry>: ...Nothing to fix
+Info in <TGeoManager::CloseGeometry>: Counting nodes...
+Info in <TGeoManager::Voxelize>: Voxelizing...
+Info in <TGeoManager::CloseGeometry>: Building cache...
+Info in <TGeoManager::CountLevels>: max level = 5, max placements = 128
+Info in <TGeoManager::CloseGeometry>: 20511 nodes/ 388 volume UID's in FAIR geometry
+Info in <TGeoManager::CloseGeometry>: ----------------modeler ready----------------
+[14:36:30][INFO] TGeometry will not be imported to VMC
+
+Warning in <TGeoManager::CloseGeometry>: geometry already closed
+[14:36:30][INFO] Add MCH alignable volumes
+Info in <TGeoManager::Export>: Exporting ccdb_object FAIR geometry as root file. Optimizations streamed.
+[14:36:30][INFO] Init CcdApi with UserAgentID: dphnmct7-1652790972-qmWqBl, Host: http://alice-ccdb.cern.ch/, alien-token: true
+Error in <TJAlienConnectionManager>: Failed to get any credentials
+Error in <TJAlienFile::Open>: No JAliEn Grid connection available!
+[14:36:39][INFO] Alignment from http://alice-ccdb.cern.ch/ for timestamp 1652790969786: , empty object for [MCH]
+Info in <TGeoManager::Export>: Exporting ccdb_object FAIR geometry as root file. Optimizations streamed.
+[14:36:39][INFO] FairMCApplication::InitGeometry: 0
+[14:36:39][INFO] Setting special cuts for MCH
+[14:36:39][INFO] Simulation RunID: 1652790989
+[14:36:39][INFO] CREATING BRANCH MCHHit
+[14:36:39][INFO] Creating branch for MCHHit with address 0x600002d21e48
+[14:36:39][INFO] CREATING BRANCH MCTrack
+[14:36:39][INFO] Creating branch for MCTrack with address 0x7fabaa29bf68
+[14:36:39][INFO] CREATING BRANCH TrackRefs
+[14:36:39][INFO] Creating branch for TrackRefs with address 0x7fabaa29c020
+[14:36:39][INFO] Monte Carlo Engine Initialisation with: TGeant3TGeo
+[14:36:39][INFO] ***  FairBaseParSet written to ROOT file   version: 1
+[14:36:39][INFO] ***  FairGeoParSet written to ROOT file   version: 1
+[14:36:39][INFO] ***  MagFieldParam written to ROOT file   version: 1
+--------------------------------------------------------------------------------
+--------------  actual containers in runtime database  -------------------------
+FairBaseParSet                                 class for parameter io
+FairGeoParSet                                  class for Geo parameter
+MagFieldParam                                  Mag. Field Parameters
+--------------  runs, versions  ------------------------------------------------
+run id
+  container                                        1st-inp    2nd-inp    output
+run: 1652790989
+  FairBaseParSet                                1652790989         -1          1
+  FairGeoParSet                                 1652790989         -1          1
+  MagFieldParam                                         -1         -1          1
+--------------  input/output  --------------------------------------------------
+first input: none
+second input: none
+output:
+OBJ: FairParRootFile	o2sim_1746_par.root	 : 0 at: 0x60000489e3a0
+Root file I/O o2sim_1746_par.root is open
+detector I/Os:  FairGenericParIo
+Run: 1652790989
+Fill:      0
+Period: , isMC:0
+LHC State: 
+Start: Sat Nov 11 03:43:06     54344
+End  : Fri Dec 22 19:43:06     54344
+1st orbit: 0, 256 orbits per TF
+Beam0: Z:A =   0:  0, Energy = 0.000
+Beam1: Z:A =   0:  0, Energy = 0.000
+sqrt[s]    = 0.000
+crossing angle (radian) = 0.000000e+00
+magnet currents (A) L3 = 0.000, Dipole = 0
+Detectors: Cont.RO Triggers
+      MCH:    -       -    
+VMC: 0x7faba892d400
+[14:36:39][INFO] Init: Real time 11.1099 s, CPU time 2.88s
+[14:36:39][INFO] Init: Memory used 683.035 MB
+[14:36:39][INFO] MEM-STAMP END OF SIM INIT683.035 683.035 MB
+
+[14:36:39][INFO] Running with 2 sim workers 
+[14:36:39][INFO] CONNECTING TO ADDRESS ipc:///tmp/o2sim-workerinternal-1744 type push
+[14:36:39][INFO] BINDING TO ADDRESS ipc:///tmp/o2sim-workerinternal-1744 type pull
+[14:36:39][STATE] Starting FairMQ state machine --> IDLE
+[14:36:39][INFO] OCCUPYING A SEGMENT IN A SHARED REGION
+[14:36:39][INFO] FOUND ID TO ATTACH -1
+[14:36:39][INFO] ATTACH NOT SUCCESSFUL
+[14:36:39][INFO] [W1] Requesting work chunk
+[14:36:39][INFO] CONNECTING TO ADDRESS ipc:///tmp/o2sim-workerinternal-1744 type push
+[14:36:39][INFO] [W1] Waiting for answer
+[14:36:39][STATE] Starting FairMQ state machine --> IDLE
+[14:36:39][INFO] OCCUPYING A SEGMENT IN A SHARED REGION
+[14:36:39][INFO] FOUND ID TO ATTACH -1
+[14:36:39][INFO] ATTACH NOT SUCCESSFUL
+[14:36:39][INFO] [W0] Requesting work chunk
+[14:36:39][INFO] [W1] Primary chunk received
+[14:36:39][INFO] [W0] Waiting for answer
+[14:36:39][INFO] [W1] Processing 1 primary particles for event 1/10 part 1/1
+[14:36:39][INFO] [W0] Primary chunk received
+[14:36:39][INFO] [W0] Processing 1 primary particles for event 2/10 part 1/1
+[14:36:39][INFO] Stack: 1 out of 1 stored 
+
+[14:36:39][INFO] Found nonconforming detector CAVE
+[14:36:39][INFO] This event/chunk did 879 steps
+[14:36:39][INFO] sending message with 5 parts
+[14:36:39][INFO] This event/chunk did 879 steps
+[14:36:39][INFO] [W1] TIME-STAMP 0.0240421	
+[14:36:39][INFO] [W1] MEM-STAMP 683.711 683.711 MB
+
+[14:36:39][INFO] [W1] Requesting work chunk
+[14:36:39][INFO] [W1] Waiting for answer
+[14:36:39][INFO] Stack: 1 out of 1 stored 
+
+[14:36:39][INFO] Found nonconforming detector CAVE
+[14:36:39][INFO] This event/chunk did 955 steps
+[14:36:39][INFO] sending message with 5 parts
+[14:36:39][INFO] This event/chunk did 955 steps
+[14:36:39][INFO] [W1] Primary chunk received
+[14:36:39][INFO] [W1] Processing 1 primary particles for event 3/10 part 1/1
+[14:36:39][INFO] [W0] TIME-STAMP 0.0277979	
+[14:36:39][INFO] [W0] MEM-STAMP 13.1172 13.1172 MB
+
+[14:36:39][INFO] [W0] Requesting work chunk
+[14:36:39][INFO] [W0] Waiting for answer
+[14:36:39][INFO] [W0] Primary chunk received
+[14:36:39][INFO] [W0] Processing 1 primary particles for event 4/10 part 1/1
+[14:36:39][INFO] Stack: 1 out of 1 stored 
+
+[14:36:39][INFO] This event/chunk did 1205 steps
+[14:36:39][INFO] sending message with 5 parts
+[14:36:39][INFO] This event/chunk did 1205 steps
+[14:36:39][INFO] [W1] TIME-STAMP 0.0444031	
+[14:36:39][INFO] [W1] MEM-STAMP 683.781 683.781 MB
+
+[14:36:39][INFO] [W1] Requesting work chunk
+[14:36:39][INFO] Stack: 1 out of 1 stored 
+
+[14:36:39][INFO] [W1] Waiting for answer
+[14:36:39][INFO] This event/chunk did 785 steps
+[14:36:39][INFO] sending message with 5 parts
+[14:36:39][INFO] This event/chunk did 785 steps
+[14:36:39][INFO] [W0] TIME-STAMP 0.037667	
+[14:36:39][INFO] [W0] MEM-STAMP 13.7383 13.7383 MB
+
+[14:36:39][INFO] [W0] Requesting work chunk
+[14:36:39][INFO] [W1] Primary chunk received
+[14:36:39][INFO] [W0] Waiting for answer
+[14:36:39][INFO] [W1] Processing 1 primary particles for event 5/10 part 1/1
+[14:36:39][INFO] [W0] Primary chunk received
+[14:36:39][INFO] [W0] Processing 1 primary particles for event 6/10 part 1/1
+[14:36:39][INFO] Stack: 1 out of 1 stored 
+
+[14:36:39][INFO] This event/chunk did 928 steps
+[14:36:39][INFO] sending message with 5 parts
+[14:36:39][INFO] This event/chunk did 928 steps
+[14:36:39][INFO] [W1] TIME-STAMP 0.0531039	
+[14:36:39][INFO] [W1] MEM-STAMP 683.781 683.781 MB
+
+[14:36:39][INFO] [W1] Requesting work chunk
+[14:36:39][INFO] [W1] Waiting for answer
+[14:36:39][INFO] [W1] Primary chunk received
+[14:36:39][INFO] [W1] Processing 1 primary particles for event 7/10 part 1/1
+[14:36:39][INFO] Stack: 1 out of 1 stored 
+
+[14:36:39][INFO] This event/chunk did 1075 steps
+[14:36:39][INFO] sending message with 5 parts
+[14:36:39][INFO] This event/chunk did 1075 steps
+[14:36:39][INFO] [W0] TIME-STAMP 0.0490479	
+[14:36:39][INFO] Stack: 1 out of 1 stored 
+
+[14:36:39][INFO] [W0] MEM-STAMP 13.8906 13.8906 MB
+
+[14:36:39][INFO] This event/chunk did 982 steps
+[14:36:39][INFO] [W0] Requesting work chunk
+[14:36:39][INFO] sending message with 5 parts
+[14:36:39][INFO] This event/chunk did 982 steps
+[14:36:39][INFO] [W1] TIME-STAMP 0.0587971	
+[14:36:39][INFO] [W1] MEM-STAMP 683.781 683.781 MB
+
+[14:36:39][INFO] [W1] Requesting work chunk
+[14:36:39][INFO] [W0] Waiting for answer
+[14:36:39][INFO] [W1] Waiting for answer
+[14:36:39][INFO] [W0] Primary chunk received
+[14:36:39][INFO] [W1] Primary chunk received
+[14:36:39][INFO] [W1] Processing 1 primary particles for event 9/10 part 1/1
+[14:36:39][INFO] [W0] Processing 1 primary particles for event 8/10 part 1/1
+[14:36:39][INFO] Stack: 1 out of 1 stored 
+
+[14:36:39][INFO] This event/chunk did 794 steps
+[14:36:39][INFO] sending message with 5 parts
+[14:36:39][INFO] This event/chunk did 794 steps
+[14:36:39][INFO] [W1] TIME-STAMP 0.0638449	
+[14:36:39][INFO] [W1] MEM-STAMP 683.816 683.816 MB
+
+[14:36:39][INFO] [W1] Requesting work chunk
+[14:36:39][INFO] [W1] Waiting for answer
+[14:36:39][INFO] Stack: 1 out of 1 stored 
+
+[14:36:39][INFO] This event/chunk did 791 steps
+[14:36:39][INFO] [W1] Primary chunk received
+[14:36:39][INFO] [W1] Processing 1 primary particles for event 10/10 part 1/1
+[14:36:39][INFO] sending message with 5 parts
+[14:36:39][INFO] This event/chunk did 791 steps
+[14:36:39][INFO] [W0] TIME-STAMP 0.0570109	
+[14:36:39][INFO] [W0] MEM-STAMP 14.2383 14.2383 MB
+
+[14:36:39][INFO] [W0] Requesting work chunk
+[14:36:39][INFO] [W0] Waiting for answer
+[14:36:39][INFO] [W0] Primary chunk received
+[14:36:39][INFO] No payload; Server in state SERVING
+[14:36:39][INFO] Stack: 1 out of 1 stored 
+
+[14:36:39][INFO] This event/chunk did 807 steps
+[14:36:39][INFO] [W0] simulation is done
+[14:36:39][INFO] sending message with 5 parts
+[14:36:39][INFO] This event/chunk did 807 steps
+[14:36:39][INFO] [W1] TIME-STAMP 0.0720251	
+[14:36:39][INFO] [W1] MEM-STAMP 683.816 683.816 MB
+
+[14:36:39][INFO] [W1] Requesting work chunk
+[14:36:39][INFO] [W1] Waiting for answer
+[14:36:39][INFO] FINISHING
+[14:36:39][INFO] 1746 caught signal 15 from source 1744
+[14:36:39][INFO] 1773 caught signal 15 from source 1746
