@@ -38,6 +38,10 @@ o2::dataformats::CalibInfoTOF Utils::mCalibTracks[NTRACKS_REQUESTED];
 int Utils::mNsample = 0;
 int Utils::mIsample = 0;
 float Utils::mPhases[100];
+uint64_t Utils::mMaskBC[16] = {};
+uint64_t Utils::mMaskBCUsed[16] = {};
+int Utils::mMaskBCchan[o2::tof::Geo::NCHANNELS][16] = {};
+int Utils::mMaskBCchanUsed[o2::tof::Geo::NCHANNELS][16] = {};
 
 void Utils::addInteractionBC(int bc, bool fromCollisonCotext)
 {
@@ -109,7 +113,7 @@ int Utils::getNinteractionBC()
   return mFillScheme.size();
 }
 
-double Utils::subtractInteractionBC(double time, bool subLatency)
+double Utils::subtractInteractionBC(double time, int& mask, bool subLatency)
 {
   static const int deltalat = o2::tof::Geo::BC_IN_ORBIT - o2::tof::Geo::LATENCYWINDOW_IN_BC;
   int bc = int(time * o2::tof::Geo::BC_TIME_INPS_INV + 0.2);
@@ -127,26 +131,38 @@ double Utils::subtractInteractionBC(double time, bool subLatency)
   int bcOrbit = bc % o2::constants::lhc::LHCMaxBunches;
 
   int dbc = o2::constants::lhc::LHCMaxBunches, bcc = bc;
+  int dbcSigned = 1000;
   for (int k = 0; k < getNinteractionBC(); k++) { // get bc from fill scheme closest
-    if (abs(bcOrbit - getInteractionBC(k)) < dbc) {
-      bcc = bc - bcOrbit + getInteractionBC(k);
-      dbc = abs(bcOrbit - getInteractionBC(k));
+    int deltaCBC = bcOrbit - getInteractionBC(k);
+    if (deltaCBC >= -8 && deltaCBC < 8) {
+      mask += (1 << (deltaCBC + 8)); // fill bc candidates
     }
-    if (abs(bcOrbit - getInteractionBC(k) + o2::constants::lhc::LHCMaxBunches) < dbc) { // in case k is close to the right border (last BC of the orbit)
-      bcc = bc - bcOrbit + getInteractionBC(k) - o2::constants::lhc::LHCMaxBunches;
-      dbc = abs(bcOrbit - getInteractionBC(k) + o2::constants::lhc::LHCMaxBunches);
+    if (abs(deltaCBC) < dbc) {
+      bcc = bc - deltaCBC;
+      dbcSigned = deltaCBC;
+      dbc = abs(dbcSigned);
     }
-    if (abs(bcOrbit - getInteractionBC(k) - o2::constants::lhc::LHCMaxBunches) < dbc) { // in case k is close to the left border (BC=0)
-      bcc = bc - bcOrbit + getInteractionBC(k) + o2::constants::lhc::LHCMaxBunches;
-      dbc = abs(bcOrbit - getInteractionBC(k) - o2::constants::lhc::LHCMaxBunches);
+    if (abs(deltaCBC + o2::constants::lhc::LHCMaxBunches) < dbc) { // in case k is close to the right border (last BC of the orbit)
+      bcc = bc - deltaCBC - o2::constants::lhc::LHCMaxBunches;
+      dbcSigned = deltaCBC + o2::constants::lhc::LHCMaxBunches;
+      dbc = abs(dbcSigned);
+    }
+    if (abs(deltaCBC - o2::constants::lhc::LHCMaxBunches) < dbc) { // in case k is close to the left border (BC=0)
+      bcc = bc - deltaCBC + o2::constants::lhc::LHCMaxBunches;
+      dbcSigned = deltaCBC - o2::constants::lhc::LHCMaxBunches;
+      dbc = abs(dbcSigned);
     }
   }
+  if (dbcSigned >= -8 && dbcSigned < 8) {
+    mask += (1 << (dbcSigned + 24)); // fill bc used
+  }
+
   time -= o2::tof::Geo::BC_TIME_INPS * bcc;
 
   return time;
 }
 
-float Utils::subtractInteractionBC(float time, bool subLatency)
+float Utils::subtractInteractionBC(float time, int& mask, bool subLatency)
 {
   static const int deltalat = o2::tof::Geo::BC_IN_ORBIT - o2::tof::Geo::LATENCYWINDOW_IN_BC;
   int bc = int(time * o2::tof::Geo::BC_TIME_INPS_INV + 0.2);
@@ -164,20 +180,32 @@ float Utils::subtractInteractionBC(float time, bool subLatency)
   int bcOrbit = bc % o2::constants::lhc::LHCMaxBunches;
 
   int dbc = o2::constants::lhc::LHCMaxBunches, bcc = bc;
+  int dbcSigned = 1000;
   for (int k = 0; k < getNinteractionBC(); k++) { // get bc from fill scheme closest
-    if (abs(bcOrbit - getInteractionBC(k)) < dbc) {
-      bcc = bc - bcOrbit + getInteractionBC(k);
-      dbc = abs(bcOrbit - getInteractionBC(k));
+    int deltaCBC = bcOrbit - getInteractionBC(k);
+    if (deltaCBC >= -8 && deltaCBC < 8) {
+      mask += (1 << (deltaCBC + 8)); // fill bc candidates
     }
-    if (abs(bcOrbit - getInteractionBC(k) + o2::constants::lhc::LHCMaxBunches) < dbc) { // in case k is close to the right border (last BC of the orbit)
-      bcc = bc - bcOrbit + getInteractionBC(k) - o2::constants::lhc::LHCMaxBunches;
-      dbc = abs(bcOrbit - getInteractionBC(k) + o2::constants::lhc::LHCMaxBunches);
+    if (abs(deltaCBC) < dbc) {
+      bcc = bc - deltaCBC;
+      dbcSigned = deltaCBC;
+      dbc = abs(dbcSigned);
     }
-    if (abs(bcOrbit - getInteractionBC(k) - o2::constants::lhc::LHCMaxBunches) < dbc) { // in case k is close to the left border (BC=0)
-      bcc = bc - bcOrbit + getInteractionBC(k) + o2::constants::lhc::LHCMaxBunches;
-      dbc = abs(bcOrbit - getInteractionBC(k) - o2::constants::lhc::LHCMaxBunches);
+    if (abs(deltaCBC + o2::constants::lhc::LHCMaxBunches) < dbc) { // in case k is close to the right border (last BC of the orbit)
+      bcc = bc - deltaCBC - o2::constants::lhc::LHCMaxBunches;
+      dbcSigned = deltaCBC + o2::constants::lhc::LHCMaxBunches;
+      dbc = abs(dbcSigned);
+    }
+    if (abs(deltaCBC - o2::constants::lhc::LHCMaxBunches) < dbc) { // in case k is close to the left border (BC=0)
+      bcc = bc - deltaCBC + o2::constants::lhc::LHCMaxBunches;
+      dbcSigned = deltaCBC - o2::constants::lhc::LHCMaxBunches;
+      dbc = abs(dbcSigned);
     }
   }
+  if (dbcSigned >= -8 && dbcSigned < 8) {
+    mask += (1 << (dbcSigned + 24)); // fill bc used
+  }
+
   time -= o2::tof::Geo::BC_TIME_INPS * bcc;
 
   return time;
@@ -231,4 +259,50 @@ bool Utils::hasFillScheme()
   }
 
   return false;
+}
+
+int Utils::addMaskBC(int mask, int channel)
+{
+  int mask2 = (mask >> 16);
+  int cmask = 1;
+  int used = 0;
+  for (int ibit = 0; ibit < 16; ibit++) {
+    if (mask & cmask) {
+      mMaskBCchan[channel][ibit]++;
+      mMaskBC[ibit]++;
+    }
+    if (mask2 & cmask) {
+      mMaskBCchanUsed[channel][ibit]++;
+      mMaskBCUsed[ibit]++;
+      used = ibit - 8;
+    }
+    cmask *= 2;
+  }
+  return used;
+}
+
+int Utils::getMaxUsed()
+{
+  int cmask = 0;
+  uint64_t val = 10; // at least 10 entry required
+  for (int ibit = 0; ibit < 16; ibit++) {
+    if (mMaskBC[ibit] > val) {
+      val = mMaskBC[ibit];
+      cmask = ibit - 8;
+    }
+  }
+  return cmask;
+}
+
+int Utils::getMaxUsedChannel(int channel)
+{
+  int cmask = 0;
+  int val = 10; // at least 10 entry required
+  for (int ibit = 0; ibit < 16; ibit++) {
+    if (mMaskBCchan[channel][ibit] > val) {
+      val = mMaskBCchan[channel][ibit];
+      cmask = ibit - 8;
+    }
+  }
+  return cmask;
 }

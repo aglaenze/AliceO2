@@ -43,8 +43,8 @@ class Utils
   static void addBC(double toftime, bool subLatency = false) { addBC(float(toftime), subLatency); }
   static void addInteractionBC(int bc, bool fromCollisonCotext = false);
   static int getInteractionBC(int ibc) { return mFillScheme[ibc]; }
-  static double subtractInteractionBC(double time, bool subLatency = false);
-  static float subtractInteractionBC(float time, bool subLatency = false);
+  static double subtractInteractionBC(double time, int& mask, bool subLatency = false);
+  static float subtractInteractionBC(float time, int& mask, bool subLatency = false);
   static void init();
   static void printFillScheme();
   static void addCalibTrack(float time);
@@ -55,6 +55,10 @@ class Utils
   static float mEtaMin;
   static float mEtaMax;
   static float mLHCPhase;
+
+  static int addMaskBC(int mask, int channel);
+  static int getMaxUsed();
+  static int getMaxUsedChannel(int channel);
 
  private:
   static std::vector<int> mFillScheme;
@@ -70,6 +74,10 @@ class Utils
   static int mNsample;
   static int mIsample;
   static float mPhases[100];
+  static uint64_t mMaskBC[16];
+  static uint64_t mMaskBCUsed[16];
+  static int mMaskBCchan[o2::tof::Geo::NCHANNELS][16];
+  static int mMaskBCchanUsed[o2::tof::Geo::NCHANNELS][16];
 
   ClassDefNV(Utils, 1);
 };

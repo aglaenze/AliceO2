@@ -258,6 +258,12 @@ InjectorFunction dplModelAdaptor(std::vector<OutputSpec> const& filterSpecs, DPL
         LOG(error) << "data on input " << msgidx << " does not follow the O2 data model, DataProcessingHeader missing";
         continue;
       }
+      static size_t currentRunNumber = -1;
+      if (dh->runNumber != currentRunNumber) {
+        LOGP(detail, "Run number changed from {} to {}. Resetting DPL timeslice counter", currentRunNumber, dh->runNumber);
+        currentRunNumber = dh->runNumber;
+        dplCounter = 0;
+      }
       const_cast<DataProcessingHeader*>(dph)->startTime = dplCounter;
       if (override_creation) {
         const_cast<DataProcessingHeader*>(dph)->creation = creationVal + (dh->firstTForbit * o2::constants::lhc::LHCOrbitNS * 0.000001f);
@@ -279,7 +285,8 @@ InjectorFunction dplModelAdaptor(std::vector<OutputSpec> const& filterSpecs, DPL
         if (DataSpecUtils::match(spec, OutputSpec{{header::gDataOriginAny, header::gDataDescriptionAny}}) ||
             DataSpecUtils::match(spec, query)) {
           channelName = channelRetriever(query, dph->startTime);
-          if (channelName.empty()) {
+          // We do not complain about DPL/EOS/0, since it's normal not to forward it.
+          if (channelName.empty() && DataSpecUtils::describe(query) != "DPL/EOS/0") {
             LOG(warning) << "can not find matching channel, not able to adopt " << DataSpecUtils::describe(query);
           }
           break;
@@ -434,9 +441,43 @@ DataProcessorSpec specifyExternalFairMQDeviceProxy(char const* name,
         .channelType = ChannelAccountingType::RAW,
       });
     };
-    ctx.services().get<CallbackService>().set(CallbackService::Id::Start, channelConfigurationChecker);
 
-    auto dataHandler = [device, converter,
+    auto drainMessages = [channel](ServiceRegistry& registry, int state) {
+      auto device = registry.get<RawDeviceService>().device();
+      // We drop messages in input only when in ready.
+      // FIXME: should we drop messages in input the first time we are in ready?
+      if (fair::mq::State{state} != fair::mq::State::Ready) {
+        return;
+      }
+      while (!device->NewStatePending()) {
+        fair::mq::Parts parts;
+        device->GetChannel(channel).Receive(parts, -1);
+        if (!device->NewStatePending()) {
+          LOGP(warn, "Unexpected {} message on channel {} while in Ready state. Dropping.", parts.Size(), channel);
+        }
+      }
+    };
+
+    ctx.services().get<CallbackService>().set(CallbackService::Id::Start, channelConfigurationChecker);
+    if (ctx.options().get<std::string>("ready-state-policy") == "drain") {
+      LOG(info) << "Drain mode requested while in Ready state";
+      ctx.services().get<CallbackService>().set(CallbackService::Id::DeviceStateChanged, drainMessages);
+    }
+    static int numberOfEoS = 0;
+    numberOfEoS = 0;
+
+    static auto countEoS = [](fair::mq::Parts& inputs) -> int {
+      int count = 0;
+      for (int msgidx = 0; msgidx < inputs.Size() / 2; ++msgidx) {
+        auto const sih = o2::header::get<SourceInfoHeader*>(inputs.At(msgidx * 2)->GetData());
+        if (sih != nullptr && sih->state == InputChannelState::Completed) {
+          count++;
+        }
+      }
+      return count;
+    };
+
+    auto dataHandler = [device, converter, &channel,
                         outputRoutes = std::move(outputRoutes),
                         control = &ctx.services().get<ControlService>(),
                         deviceState = &ctx.services().get<DeviceState>(),
@@ -453,25 +494,21 @@ DataProcessorSpec specifyExternalFairMQDeviceProxy(char const* name,
         return {""};
       };
 
-      auto checkEos = [&inputs]() -> bool {
-        std::string channelNameForSplitParts;
-        for (int msgidx = 0; msgidx < inputs.Size() / 2; ++msgidx) {
-          auto const sih = o2::header::get<SourceInfoHeader*>(inputs.At(msgidx * 2)->GetData());
-          if (sih != nullptr && sih->state == InputChannelState::Completed) {
-            return true;
-          }
-        }
-        return false;
-      };
       // we buffer the condition since the converter will forward messages by move
-      bool doEos = checkEos();
+      numberOfEoS += countEoS(inputs);
       converter(timingInfo, *device, inputs, channelRetriever);
 
-      if (doEos) {
+      // If we have enough EoS messages, we can stop the device
+      // Notice that this has a number of failure modes:
+      // * If a connection sends the EoS and then closes.
+      // * If a connection sends two EoS.
+      // * If a connection sends an end of stream closes and another one opens.
+      if (numberOfEoS >= device->GetNumberOfConnectedPeers(channel)) {
         // Mark all input channels as closed
         for (auto& info : deviceState->inputChannelInfos) {
           info.state = InputChannelState::Completed;
         }
+        numberOfEoS = 0;
         control->endOfStream();
       }
     };
@@ -505,6 +542,7 @@ DataProcessorSpec specifyExternalFairMQDeviceProxy(char const* name,
   }};
   const char* d = strdup(((std::string(defaultChannelConfig).find("name=") == std::string::npos ? (std::string("name=") + name + ",") : "") + std::string(defaultChannelConfig)).c_str());
   spec.options = {
+    ConfigParamSpec{"ready-state-policy", VariantType::String, "keep", {"What to do when the device is in ready state: *keep*, drain"}},
     ConfigParamSpec{"channel-config", VariantType::String, d, {"Out-of-band channel config"}}};
   return spec;
 }

@@ -1106,12 +1106,13 @@ void MatchTOF::selectBestMatches()
 
     // add also calibration infos
     if (sourceID == o2::dataformats::GlobalTrackID::ITSTPC) {
-      float deltat = o2::tof::Utils::subtractInteractionBC(mTOFClusWork[matchingPair.getTOFClIndex()].getTimeRaw() - t0info - intLT.getTOF(o2::track::PID::Pion), true);
+      int mask = 0;
+      float deltat = o2::tof::Utils::subtractInteractionBC(mTOFClusWork[matchingPair.getTOFClIndex()].getTimeRaw() - t0info - intLT.getTOF(o2::track::PID::Pion), mask, true);
 
       mCalibInfoTOF.emplace_back(mTOFClusWork[matchingPair.getTOFClIndex()].getMainContributingChannel(),
                                  mTimestamp / 1000 + int(mTOFClusWork[matchingPair.getTOFClIndex()].getTimeRaw() * 1E-12), // add time stamp
                                  deltat,
-                                 mTOFClusWork[matchingPair.getTOFClIndex()].getTot());
+                                 mTOFClusWork[matchingPair.getTOFClIndex()].getTot(), mask);
     }
 
     if (mMCTruthON) {
@@ -1124,7 +1125,7 @@ void MatchTOF::selectBestMatches()
           fake = false;
         }
       }
-      mOutTOFLabels[trkTypeSplitted].emplace_back(labelsTOF[0].getTrackID(), labelsTOF[0].getEventID(), labelsTOF[0].getSourceID(), fake);
+      mOutTOFLabels[trkTypeSplitted].emplace_back(labelTrack).setFakeFlag(fake);
     }
     i++;
   }
@@ -1220,7 +1221,7 @@ void MatchTOF::selectBestMatchesHP()
       mCalibInfoTOF.emplace_back(mTOFClusWork[matchingPair.getTOFClIndex()].getMainContributingChannel(),
                                  mTimestamp / 1000 + int(mTOFClusWork[matchingPair.getTOFClIndex()].getTimeRaw() * 1E-12), // add time stamp
                                  mTOFClusWork[matchingPair.getTOFClIndex()].getTimeRaw() - t0info - intLT.getTOF(o2::track::PID::Pion),
-                                 mTOFClusWork[matchingPair.getTOFClIndex()].getTot());
+                                 mTOFClusWork[matchingPair.getTOFClIndex()].getTot(), 0);
     }
 
     if (mMCTruthON) {
@@ -1233,7 +1234,7 @@ void MatchTOF::selectBestMatchesHP()
           fake = false;
         }
       }
-      mOutTOFLabels[trkTypeSplitted].emplace_back(labelsTOF[0].getTrackID(), labelsTOF[0].getEventID(), labelsTOF[0].getSourceID(), fake);
+      mOutTOFLabels[trkTypeSplitted].emplace_back(labelTrack).setFakeFlag(fake);
     }
   }
 }

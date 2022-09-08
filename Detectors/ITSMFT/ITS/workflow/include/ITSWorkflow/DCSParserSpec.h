@@ -63,6 +63,7 @@ class ITSDCSParser : public Task
   void saveToOutput();
   void resetMemory();
   void pushToCCDB(ProcessingContext&);
+  bool updatePosition(size_t&, size_t&, const std::string&, const char*, const std::string&, bool ignoreNpos = false);
   void updateAndCheck(int&, const int);
   void updateAndCheck(short int&, const short int);
   void writeChipInfo(o2::dcs::DCSconfigObject_t&, const std::string&, const unsigned short int);
@@ -86,6 +87,9 @@ class ITSDCSParser : public Task
 
   // Keep track of whether the endOfStream() or stop() has been called
   bool mStopped = false;
+
+  // Whether to use verbose output
+  bool mVerboseOutput = false;
 
   // DCS config object for storing output string
   o2::dcs::DCSconfigObject_t mConfigDCS;

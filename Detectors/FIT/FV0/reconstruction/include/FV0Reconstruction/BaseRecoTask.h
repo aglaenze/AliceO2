@@ -17,7 +17,7 @@
 #include "DataFormatsFV0/Digit.h"
 #include "DataFormatsFV0/ChannelData.h"
 #include "DataFormatsFV0/RecPoints.h"
-#include "FV0Calibration/FV0ChannelTimeCalibrationObject.h"
+#include "DataFormatsFV0/FV0ChannelTimeCalibrationObject.h"
 #include <gsl/span>
 
 namespace o2
@@ -35,11 +35,11 @@ class BaseRecoTask
                              gsl::span<const o2::fv0::ChannelData> inChData,
                              gsl::span<o2::fv0::ChannelDataFloat> outChData);
   void FinishTask();
-  void setChannelOffset(o2::fv0::FV0ChannelTimeCalibrationObject* caliboffsets) { mCalibOffset = caliboffsets; };
-  int getChannelOffset(int channel);
+  void SetChannelOffset(o2::fv0::FV0ChannelTimeCalibrationObject const* caliboffsets) { mCalibOffset = caliboffsets; };
+  int getOffset(int channel);
 
  private:
-  o2::fv0::FV0ChannelTimeCalibrationObject* mCalibOffset = nullptr;
+  o2::fv0::FV0ChannelTimeCalibrationObject const* mCalibOffset = nullptr;
 
   ClassDefNV(BaseRecoTask, 3);
 };

@@ -44,7 +44,7 @@ class LHCClockCalibDevice : public o2::framework::Task
   using LHCphase = o2::dataformats::CalibLHCphaseTOF;
 
  public:
-  LHCClockCalibDevice(std::shared_ptr<o2::base::GRPGeomRequest> req, bool useCCDB, bool followCCDBUpdates) : mCCDBRequest(req), mUseCCDB(useCCDB), mFollowCCDBUpdates(followCCDBUpdates) {}
+  LHCClockCalibDevice(std::shared_ptr<o2::base::GRPGeomRequest> req, bool useCCDB) : mCCDBRequest(req), mUseCCDB(useCCDB) {}
 
   void init(o2::framework::InitContext& ic) final
   {
@@ -93,13 +93,15 @@ class LHCClockCalibDevice : public o2::framework::Task
         LHCphase* lhcPhase = new LHCphase(std::move(*lhcPhaseIn));
         TimeSlewing* channelCalib = new TimeSlewing(std::move(*channelCalibIn));
         mcalibTOFapi = new o2::tof::CalibTOFapi(long(0), lhcPhase, channelCalib);
+        mUpdateCCDB = false;
       } else {
         // if the calib objects were updated, we need to update the mcalibTOFapi
         if (mUpdateCCDB) {
           delete mcalibTOFapi;
           LHCphase* lhcPhase = new LHCphase(*lhcPhaseIn);
-          TimeSlewing* channelCalib = new TimeSlewing(*channelCalibIn);
+          TimeSlewing* channelCalib = new TimeSlewing(std::move(*channelCalibIn));
           mcalibTOFapi = new o2::tof::CalibTOFapi(long(0), lhcPhase, channelCalib);
+          mUpdateCCDB = false;
         }
       }
     } else { // we use "fake" initial calibrations
@@ -130,15 +132,13 @@ class LHCClockCalibDevice : public o2::framework::Task
   {
     o2::base::GRPGeomHelper::instance().finaliseCCDB(matcher, obj);
     mUpdateCCDB = false;
-    if (mFollowCCDBUpdates) {
-      if (matcher == ConcreteDataMatcher("TOF", "LHCphaseCal", 0)) {
-        mUpdateCCDB = true;
-        return;
-      }
-      if (matcher == ConcreteDataMatcher("TOF", "ChannelCalibCal", 0)) {
-        mUpdateCCDB = true;
-        return;
-      }
+    if (matcher == ConcreteDataMatcher("TOF", "LHCphaseCal", 0)) {
+      mUpdateCCDB = true;
+      return;
+    }
+    if (matcher == ConcreteDataMatcher("TOF", "ChannelCalibCal", 0)) {
+      mUpdateCCDB = true;
+      return;
     }
   }
 
@@ -157,7 +157,6 @@ class LHCClockCalibDevice : public o2::framework::Task
   std::shared_ptr<o2::base::GRPGeomRequest> mCCDBRequest;
   bool mUpdateCCDB = false;
   bool mUseCCDB = true;
-  bool mFollowCCDBUpdates = false;
 
   //________________________________________________________________
   void sendOutput(DataAllocator& output)
@@ -188,7 +187,7 @@ class LHCClockCalibDevice : public o2::framework::Task
 namespace framework
 {
 
-DataProcessorSpec getLHCClockCalibDeviceSpec(bool useCCDB, bool followCCDBUpdates = false)
+DataProcessorSpec getLHCClockCalibDeviceSpec(bool useCCDB)
 {
   using device = o2::calibration::LHCClockCalibDevice;
   using clbUtils = o2::calibration::Utils;
@@ -214,7 +213,7 @@ DataProcessorSpec getLHCClockCalibDeviceSpec(bool useCCDB, bool followCCDBUpdate
     "calib-lhcclock-calibration",
     inputs,
     outputs,
-    AlgorithmSpec{adaptFromTask<device>(ccdbRequest, useCCDB, followCCDBUpdates)},
+    AlgorithmSpec{adaptFromTask<device>(ccdbRequest, useCCDB)},
     Options{
       {"tf-per-slot", VariantType::UInt32, 5u, {"number of TFs per calibration time slot"}},
       {"max-delay", VariantType::UInt32, 3u, {"number of slots in past to consider"}},

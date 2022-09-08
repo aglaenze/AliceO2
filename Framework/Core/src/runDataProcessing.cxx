@@ -532,9 +532,6 @@ struct ControlWebSocketHandler : public WebSocketHandler {
     for (auto& metricsInfo : *mContext.metrics) {
       std::fill(metricsInfo.changed.begin(), metricsInfo.changed.end(), false);
     }
-    if (didHaveNewMetric) {
-      DeviceMetricsHelper::updateMetricsNames(*mContext.driver, *mContext.metrics);
-    }
   }
 
   /// The driver context were we want to accumulate changes
@@ -695,7 +692,7 @@ void handle_crash(int /* sig */)
   int size = backtrace(array, 1024);
 
   {
-    char const* msg = "*** Segmentation fault (O2)\nBacktrace:\n";
+    char const* msg = "*** Program crashed (Segmentation fault, FPE, BUS, ABRT, KILL)\nBacktrace by DPL:\n";
     int len = strlen(msg); /* the byte length of the string */
     auto retVal = write(STDERR_FILENO, msg, len);
     (void)retVal;
@@ -953,7 +950,6 @@ LogProcessingState processChildrenOutput(DriverInfo& driverInfo,
   result.hasNewMetric = hasNewMetric;
   if (hasNewMetric) {
     hasNewMetric = false;
-    DeviceMetricsHelper::updateMetricsNames(driverInfo, metricsInfos);
   }
   return result;
 }
@@ -1867,8 +1863,6 @@ int runStateMachine(DataProcessorSpecs const& workflow,
           driverInfo.states.push_back(DriverState::RUNNING);
         }
         {
-          uint64_t inputProcessingStart = uv_hrtime();
-          auto inputProcessingLatency = inputProcessingStart - inputProcessingLast;
           auto outputProcessing = processChildrenOutput(driverInfo, infos, runningWorkflow.devices, controls, metricsInfos);
           if (outputProcessing.didProcessMetric) {
             size_t timestamp = uv_now(loop);
@@ -1879,10 +1873,6 @@ int runStateMachine(DataProcessorSpecs const& workflow,
               std::fill(metricsInfo.changed.begin(), metricsInfo.changed.end(), false);
             }
           }
-          auto inputProcessingEnd = uv_hrtime();
-          driverInfo.inputProcessingCost = (inputProcessingEnd - inputProcessingStart) / 1000000.f;
-          driverInfo.inputProcessingLatency = (inputProcessingLatency) / 1000000.f;
-          inputProcessingLast = inputProcessingStart;
         }
         break;
       case DriverState::QUIT_REQUESTED:
